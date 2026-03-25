@@ -395,3 +395,40 @@ footer p {
         font-size: 16px;
     }
 }
+
+/* ============================================
+   Fallback for browsers without backdrop-filter
+   ============================================ */
+@supports not (backdrop-filter: blur(12px)) {
+    .card {
+        background: rgba(26, 26, 46, 0.95);
+    }
+
+    .pricing-card {
+        background: rgba(26, 26, 46, 0.9);
+    }
+
+    .cta {
+        background: rgba(52, 152, 219, 0.25);
+    }
+
+    .theme-toggle {
+        background: rgba(26, 26, 46, 0.8);
+    }
+
+    [data-theme="light"] .card {
+        background: rgba(255, 255, 255, 0.95);
+    }
+
+    [data-theme="light"] .pricing-card {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    [data-theme="light"] .cta {
+        background: rgba(52, 152, 219, 0.2);
+    }
+
+    [data-theme="light"] .theme-toggle {
+        background: rgba(255, 255, 255, 0.8);
+    }
+}
