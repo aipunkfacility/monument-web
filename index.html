@@ -207,41 +207,55 @@
                 <p class="section-desc">Оригинал — Ретушь — Результат на граните</p>
             </div>
             
-            <!-- Женский портрет -->
-            <div class="portfolio-example">
-                <h3 class="portfolio-title">Женский портрет</h3>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <img src="img/woman_original.webp" alt="Оригинал" loading="lazy">
-                        <span class="portfolio-label">Оригинал</span>
+            <div class="portfolio-slider" id="portfolioSlider">
+                <div class="portfolio-track">
+                    <!-- Женский портрет -->
+                    <div class="portfolio-slide">
+                        <h3 class="portfolio-title">Женский портрет</h3>
+                        <div class="portfolio-grid">
+                            <div class="portfolio-item">
+                                <img src="img/woman_original.webp" alt="Оригинал" loading="lazy">
+                                <span class="portfolio-label">Оригинал</span>
+                            </div>
+                            <div class="portfolio-item">
+                                <img src="img/woman_retouch.webp" alt="Ретушь" loading="lazy">
+                                <span class="portfolio-label">Ретушь</span>
+                            </div>
+                            <div class="portfolio-item">
+                                <img src="img/woman_stone.webp" alt="На граните" loading="lazy">
+                                <span class="portfolio-label">На граните</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="portfolio-item">
-                        <img src="img/woman_retouch.webp" alt="Ретушь" loading="lazy">
-                        <span class="portfolio-label">Ретушь</span>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="img/woman_stone.webp" alt="На граните" loading="lazy">
-                        <span class="portfolio-label">На граните</span>
+                    
+                    <!-- Мужской портрет -->
+                    <div class="portfolio-slide">
+                        <h3 class="portfolio-title">Мужской портрет</h3>
+                        <div class="portfolio-grid">
+                            <div class="portfolio-item">
+                                <img src="img/man_original.webp" alt="Оригинал" loading="lazy">
+                                <span class="portfolio-label">Оригинал</span>
+                            </div>
+                            <div class="portfolio-item">
+                                <img src="img/man_retouch.webp" alt="Ретушь" loading="lazy">
+                                <span class="portfolio-label">Ретушь</span>
+                            </div>
+                            <div class="portfolio-item">
+                                <img src="img/man_stone.webp" alt="На граните" loading="lazy">
+                                <span class="portfolio-label">На граните</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Мужской портрет -->
-            <div class="portfolio-example">
-                <h3 class="portfolio-title">Мужской портрет</h3>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <img src="img/man_original.webp" alt="Оригинал" loading="lazy">
-                        <span class="portfolio-label">Оригинал</span>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="img/man_retouch.webp" alt="Ретушь" loading="lazy">
-                        <span class="portfolio-label">Ретушь</span>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="img/man_stone.webp" alt="На граните" loading="lazy">
-                        <span class="portfolio-label">На граните</span>
-                    </div>
+                
+                <div class="portfolio-nav">
+                    <button class="portfolio-btn" id="portfolioPrev" aria-label="Предыдущий">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <div class="portfolio-dots" id="portfolioDots"></div>
+                    <button class="portfolio-btn" id="portfolioNext" aria-label="Следующий">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </button>
                 </div>
             </div>
         </div>

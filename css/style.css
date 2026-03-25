@@ -613,12 +613,18 @@ body {
 /* ============================================
    Portfolio Section
    ============================================ */
-.portfolio-example {
-    margin-bottom: 50px;
+.portfolio-slider {
+    position: relative;
+    overflow: hidden;
 }
 
-.portfolio-example:last-child {
-    margin-bottom: 0;
+.portfolio-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-slide {
+    flex: 0 0 100%;
 }
 
 .portfolio-title {
@@ -666,6 +672,55 @@ body {
     font-size: 14px;
     font-weight: 600;
     color: var(--heading-color);
+}
+
+.portfolio-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.portfolio-btn {
+    width: 50px;
+    height: 50px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--heading-color);
+    font-size: 24px;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-btn:hover {
+    background: var(--accent-color);
+    color: #ffffff;
+    border-color: var(--accent-color);
+}
+
+.portfolio-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.portfolio-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--card-border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: none;
+}
+
+.portfolio-dot.active {
+    background: var(--accent-color);
+    transform: scale(1.2);
 }
 
 /* ============================================
