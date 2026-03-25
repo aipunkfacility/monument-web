@@ -12,7 +12,7 @@
     /* Text */
     --text-color: #e0e0e0;
     --text-muted: #c0c0c0;
-    --text-dim: #a0a0a0;
+    --text-dim: #b0b0b0;
     --heading-color: #ffffff;
     
     /* Accent */
@@ -51,7 +51,7 @@
     /* Footer */
     --footer-bg: rgba(255, 255, 255, 0.03);
     --footer-border: rgba(255, 255, 255, 0.1);
-    --footer-note-color: rgba(255, 255, 255, 0.4);
+    --footer-note-color: rgba(255, 255, 255, 0.55);
     
     /* Buttons */
     --btn-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -76,7 +76,7 @@
     
     --text-color: #333333;
     --text-muted: #555555;
-    --text-dim: #777777;
+    --text-dim: #888888;
     --heading-color: #1a1a2e;
     
     --accent-color: #2980b9;
@@ -106,7 +106,7 @@
     
     --footer-bg: rgba(255, 255, 255, 0.4);
     --footer-border: rgba(0, 0, 0, 0.08);
-    --footer-note-color: rgba(0, 0, 0, 0.4);
+    --footer-note-color: rgba(0, 0, 0, 0.55);
     
     --btn-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     --btn-primary-bg: rgba(52, 152, 219, 0.9);
