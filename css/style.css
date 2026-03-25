@@ -1037,6 +1037,19 @@ body {
     margin: 0;
 }
 
+.cta-contact a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.cta-contact a:hover {
+    color: var(--accent-color);
+}
+
 .cta-contact i {
     color: var(--accent-color);
 }
