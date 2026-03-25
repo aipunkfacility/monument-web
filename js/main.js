@@ -254,8 +254,8 @@
 
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.1
+        rootMargin: '100px 0px', // Start animation 100px before element enters viewport
+        threshold: 0
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -269,7 +269,8 @@
 
     animateElements.forEach((el, index) => {
         el.classList.add('animate-on-scroll');
-        el.style.transitionDelay = `${index * 0.1}s`;
+        // Reduced delay: 0.05s instead of 0.1s
+        el.style.transitionDelay = `${index * 0.05}s`;
         observer.observe(el);
     });
 
