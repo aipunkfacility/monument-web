@@ -5,7 +5,18 @@
     const html = document.documentElement;
 
     // Check for saved theme preference or default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    // Use try-catch for localStorage (Safari private mode throws error)
+    let savedTheme = 'dark';
+    try {
+        const stored = localStorage.getItem('theme');
+        if (stored) {
+            savedTheme = stored;
+        }
+    } catch (e) {
+        // localStorage not available (private mode, cookies disabled)
+        console.warn('localStorage not available, using default theme');
+    }
+    
     html.setAttribute('data-theme', savedTheme);
     updateToggleIcon(savedTheme);
 
@@ -13,7 +24,14 @@
         const currentTheme = html.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
+        
+        try {
+            localStorage.setItem('theme', newTheme);
+        } catch (e) {
+            // localStorage not available, theme will reset on page reload
+            console.warn('Could not save theme preference');
+        }
+        
         updateToggleIcon(newTheme);
     });
 

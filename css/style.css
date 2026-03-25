@@ -137,6 +137,29 @@ body {
     transition: background var(--transition-normal), color var(--transition-normal);
 }
 
+/* --- Skip Link (Accessibility) --- */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-color);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 0 0 8px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    z-index: 10000;
+    transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
 /* --- Layout --- */
 .container {
     max-width: 1200px;
@@ -358,31 +381,6 @@ body {
     margin-bottom: 40px;
     line-height: 1.7;
     animation: fadeInUp 0.6s ease-out 0.2s both;
-}
-
-.hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 50px;
-    animation: fadeInUp 0.6s ease-out 0.3s both;
-}
-
-.stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.stat-value {
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--heading-color);
-}
-
-.stat-label {
-    font-size: 14px;
-    color: var(--text-dim);
 }
 
 .hero-cta {
@@ -1336,18 +1334,6 @@ body {
         padding: 70px 0;
     }
     
-    .hero-stats {
-        gap: 25px;
-    }
-    
-    .stat-value {
-        font-size: 26px;
-    }
-    
-    .stat-label {
-        font-size: 12px;
-    }
-    
     .advantages-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -1360,10 +1346,6 @@ body {
     
     .step-icon {
         display: none;
-    }
-    
-    .portfolio-compare {
-        grid-template-columns: 1fr;
     }
     
     .pricing-grid {
@@ -1410,11 +1392,6 @@ body {
     .hero-badge {
         font-size: 12px;
         padding: 6px 14px;
-    }
-    
-    .hero-stats {
-        flex-direction: column;
-        gap: 20px;
     }
     
     .hero-cta {
@@ -1501,4 +1478,98 @@ body {
 .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ============================================
+   Focus Visible (Accessibility)
+   ============================================ */
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.btn:focus-visible,
+.navbar-menu a:focus-visible,
+.navbar-logo:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.navbar-toggle:focus-visible,
+.theme-toggle:focus-visible,
+.scroll-top:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.faq-question:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: -2px;
+}
+
+.portfolio-btn:focus-visible,
+.portfolio-dot:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Increase touch target for portfolio dots */
+.portfolio-dot {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    position: relative;
+}
+
+.portfolio-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: var(--card-border);
+    border-radius: 50%;
+    transition: all var(--transition-fast);
+}
+
+.portfolio-dot:hover::before,
+.portfolio-dot.active::before {
+    background: var(--accent-color);
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* ============================================
+   Reduced Motion (Accessibility)
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .hero-bg::before {
+        animation: none;
+    }
+    
+    .hero-scroll {
+        animation: none;
+    }
+    
+    .hero-badge,
+    .hero-title,
+    .hero-subtitle,
+    .hero-cta {
+        animation: none;
+        opacity: 1;
+    }
 }

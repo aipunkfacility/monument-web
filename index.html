@@ -31,6 +31,9 @@
     <script src="js/main.js" defer></script>
 </head>
 <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="navbar-container">
@@ -55,6 +58,8 @@
         </div>
     </nav>
 
+    <!-- Main Content -->
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-bg"></div>
@@ -370,49 +375,49 @@
                 <h2 class="section-title">Часто задаваемые вопросы</h2>
             </div>
             <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                <div class="faq-item" role="region" aria-labelledby="faq1-heading">
+                    <button class="faq-question" id="faq1-heading" aria-expanded="false" aria-controls="faq1-answer">
                         <span>Какие форматы файлов вы принимаете?</span>
                         <i class="ri-add-line"></i>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq1-answer">
                         <p>Принимаю любые форматы: JPG, PNG, TIFF, RAW, PDF, сканы, фото с телефона. Даже скриншоты или фото документов. Главное — чтобы изображение было видимо.</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                <div class="faq-item" role="region" aria-labelledby="faq2-heading">
+                    <button class="faq-question" id="faq2-heading" aria-expanded="false" aria-controls="faq2-answer">
                         <span>Можно ли восстановить очень старое или повреждённое фото?</span>
                         <i class="ri-add-line"></i>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq2-answer">
                         <p>Да, работаю с любыми исходниками. Использую нейросети и ручную обработку, чтобы вытянуть максимум деталей. Присылайте — оценю и скажу, что можно сделать.</p>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                <div class="faq-item" role="region" aria-labelledby="faq3-heading">
+                    <button class="faq-question" id="faq3-heading" aria-expanded="false" aria-controls="faq3-answer">
                         <span>Как происходит оплата?</span>
                         <i class="ri-add-line"></i>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq3-answer">
                         <p>Для новых клиентов — оплата после получения готовой работы. Для постоянных — индивидуальные условия. Принимаю переводы на карту.</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                <div class="faq-item" role="region" aria-labelledby="faq4-heading">
+                    <button class="faq-question" id="faq4-heading" aria-expanded="false" aria-controls="faq4-answer">
                         <span>Сколько правок входит в стоимость?</span>
                         <i class="ri-add-line"></i>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq4-answer">
                         <p>До 3 правок бесплатно. Если правки нужны из-за моей ошибки — без ограничений. Если изменились требования — обсуждается индивидуально.</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                <div class="faq-item" role="region" aria-labelledby="faq5-heading">
+                    <button class="faq-question" id="faq5-heading" aria-expanded="false" aria-controls="faq5-answer">
                         <span>Работаете ли с ритуальными агентствами?</span>
                         <i class="ri-add-line"></i>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq5-answer">
                         <p>Да, сотрудничаю с мастерскими по изготовлению памятников и ритуальными агентствами. Гибкие условия, специальные цены при постоянных заказах.</p>
                     </div>
                 </div>
@@ -444,6 +449,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">

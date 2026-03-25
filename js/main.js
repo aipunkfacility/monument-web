@@ -3,6 +3,27 @@
     'use strict';
 
     // ============================================
+    // Utility Functions
+    // ============================================
+    
+    /**
+     * Throttle function to limit execution rate
+     * @param {Function} fn - Function to throttle
+     * @param {number} ms - Minimum time between executions
+     * @returns {Function} Throttled function
+     */
+    function throttle(fn, ms) {
+        let lastTime = 0;
+        return function(...args) {
+            const now = Date.now();
+            if (now - lastTime >= ms) {
+                fn.apply(this, args);
+                lastTime = now;
+            }
+        };
+    }
+
+    // ============================================
     // Mobile Navigation Toggle
     // ============================================
     const navbarToggle = document.getElementById('navbarToggle');
@@ -39,7 +60,7 @@
     // ============================================
     let lastScroll = 0;
 
-    window.addEventListener('scroll', () => {
+    function handleScroll() {
         const currentScroll = window.pageYOffset;
         
         if (currentScroll > 100) {
@@ -49,7 +70,9 @@
         }
         
         lastScroll = currentScroll;
-    });
+    }
+
+    window.addEventListener('scroll', throttle(handleScroll, 16));
 
     // ============================================
     // FAQ Accordion
@@ -130,6 +153,21 @@
             nextBtn.addEventListener('click', nextSlide);
         }
         
+        // Keyboard navigation for slider
+        portfolioSlider.setAttribute('tabindex', '0');
+        portfolioSlider.setAttribute('role', 'region');
+        portfolioSlider.setAttribute('aria-label', 'Галерея работ');
+        
+        portfolioSlider.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                nextSlide();
+            }
+        });
+        
         // Touch/Swipe support
         let touchStartX = 0;
         let touchEndX = 0;
@@ -163,13 +201,15 @@
     const scrollTopBtn = document.getElementById('scrollTop');
 
     if (scrollTopBtn) {
-        window.addEventListener('scroll', () => {
+        function toggleScrollTop() {
             if (window.pageYOffset > 500) {
                 scrollTopBtn.classList.add('visible');
             } else {
                 scrollTopBtn.classList.remove('visible');
             }
-        });
+        }
+
+        window.addEventListener('scroll', throttle(toggleScrollTop, 100));
 
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({
@@ -258,7 +298,7 @@
         });
     }
 
-    window.addEventListener('scroll', updateActiveLink);
+    window.addEventListener('scroll', throttle(updateActiveLink, 100));
     updateActiveLink();
 
 })();
