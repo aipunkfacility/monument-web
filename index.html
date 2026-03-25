@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ретушь для гравировки</title>
+    <title>Ретушь для гравировки на памятниках | Профессиональная подготовка фото</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     
     <!-- SEO -->
-    <meta name="description" content="Профессиональная ретушь фотографий для гравировки на памятниках. Качественная обработка, сроки 12-24 часа, бесплатный тест.">
-    <meta name="keywords" content="ретушь, гравировка, памятники, фотографии, лазер, ударный станок">
+    <meta name="description" content="Профессиональная ретушь фотографий для гравировки на памятниках. Подготовка фото для лазерной и ударной гравировки. Сроки 12-24 часа, бесплатный тест.">
+    <meta name="keywords" content="ретушь для гравировки, фото на памятник, подготовка фото для гравировки, ретушь портретов, лазерная гравировка, ударная гравировка">
     <meta name="author" content="Александр">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Ретушь для гравировки">
-    <meta property="og:description" content="Профессиональная подготовка фотографий для гравировки по камню">
+    <meta property="og:title" content="Ретушь для гравировки на памятниках">
+    <meta property="og:description" content="Профессиональная подготовка фотографий для гравировки по камню. Качество, скорость, бесплатный тест.">
     <meta property="og:type" content="website">
     
     <!-- Preconnect for CDN -->
@@ -25,113 +25,481 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox@2/dist/simple-lightbox.min.css">
     
     <!-- Scripts -->
     <script src="js/theme.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <header>
-                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
-                    <i class="ri-moon-line" id="themeIcon"></i>
-                </button>
-                <h1>Профессиональная ретушь для гравировки</h1>
-            </header>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">
+                <i class="ri-focus-3-line"></i>
+                <span>RetouchPro</span>
+            </a>
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Открыть меню">
+                <i class="ri-menu-line"></i>
+            </button>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="#advantages">Преимущества</a></li>
+                <li><a href="#process">Как это работает</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#pricing">Цены</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="navbar-cta">Связаться</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                <i class="ri-moon-line" id="themeIcon"></i>
+            </button>
+        </div>
+    </nav>
 
-            <main>
-                <p><strong>Здравствуйте!</strong></p>
-                <p>Меня зовут Александр, я профессиональный дизайнер. Предлагаю помощь с подготовкой фотографий для гравировки по камню (лазер, ударный станок).</p>
-                <p>Делаю обработку с расчетом на конечный результат: чтобы на камне хорошо читалось лицо, сохранялся объем и не терялся контраст.</p>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="ri-flashlight-line"></i>
+                <span>Бесплатный тест для новых клиентов</span>
+            </div>
+            <h1 class="hero-title">
+                Ретушь фотографий<br>
+                <span class="hero-accent">для гравировки на памятниках</span>
+            </h1>
+            <p class="hero-subtitle">
+                Подготовлю любое фото для лазерной или ударной гравировки.<br>
+                Результат, который чётко читается на камне.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">500+</span>
+                    <span class="stat-label">Выполненных заказов</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">12-24ч</span>
+                    <span class="stat-label">Срок исполнения</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Довольных клиентов</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary btn-lg">
+                    <i class="ri-telegram-line"></i>
+                    Получить бесплатный тест
+                </a>
+                <a href="#portfolio" class="btn btn-outline btn-lg">
+                    <i class="ri-gallery-line"></i>
+                    Смотреть работы
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#advantages">
+                <i class="ri-arrow-down-line"></i>
+            </a>
+        </div>
+    </section>
 
-                <h2>Что я умею:</h2>
-                <ul>
-                    <li><strong>Качество «под камень»:</strong> глубокая прорисовка черт лица, волос и одежды.</li>
-                    <li><strong>Сложный монтаж:</strong> замена одежды, фона, сборка людей в полный рост, подстройка под эскиз заказчика.</li>
-                    <li><strong>Техническая точность:</strong> готовлю файлы строго под ваши требования и технологию.</li>
-                    <li><strong>Продвинутые технологии:</strong> использование нейросетей и алгоритмов для вытягивания деталей из критически плохих фото.</li>
-                </ul>
+    <!-- Advantages Section -->
+    <section class="section advantages" id="advantages">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Почему мы</span>
+                <h2 class="section-title">Преимущества работы со мной</h2>
+                <p class="section-desc">Знаю специфику гравировки по камню и готовлю фото именно под конечный результат</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="ri-focus-3-line"></i>
+                    </div>
+                    <h3>Качество «под камень»</h3>
+                    <p>Глубокая прорисовка черт лица, волос и одежды. На гравировке всё читается чётко.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="ri-magic-line"></i>
+                    </div>
+                    <h3>Сложный монтаж</h3>
+                    <p>Замена одежды и фона, сборка людей в полный рост, подстройка под ваш эскиз.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="ri-settings-3-line"></i>
+                    </div>
+                    <h3>Техническая точность</h3>
+                    <p>Готовлю файлы строго под ваши требования и технологию гравировки.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="ri-brain-line"></i>
+                    </div>
+                    <h3>Нейросети + опыт</h3>
+                    <p>Вытягиваю детали даже из критически плохих исходников с помощью AI.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="ri-time-line"></i>
+                    </div>
+                    <h3>Быстрые сроки</h3>
+                    <p>Стандарт — 12-24 часа. Срочные заказы за 3-6 часов без потери качества.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="ri-gift-line"></i>
+                    </div>
+                    <h3>Бесплатный тест</h3>
+                    <p>Сделаю пробную ретушь 1-2 фото бесплатно, чтобы вы оценили качество.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <section class="pricing">
-                    <h2>Стоимость и сроки</h2>
-                    <div class="pricing-grid">
-                        <div class="pricing-card">
-                            <h3>Ретушь портрета</h3>
-                            <div class="value">1000 – 2000 ₽</div>
-                            <p class="desc">Финальная цена зависит от качества исходника и необходимости сложного монтажа.</p>
+    <!-- Process Section -->
+    <section class="section process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Процесс</span>
+                <h2 class="section-title">Как это работает</h2>
+                <p class="section-desc">Простой и понятный процесс от заявки до готового файла</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Отправляете фото</h3>
+                        <p>Присылайте исходное фото в Telegram или WhatsApp. Укажите пожелания и требования.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="ri-send-plane-line"></i>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Оцениваю и согласовываю</h3>
+                        <p>Смотрю исходник, определяю объём работы и называю точную стоимость и сроки.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="ri-search-eye-line"></i>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Делаю ретушь</h3>
+                        <p>Обрабатываю фото: вытягиваю детали, корректирую контраст, готовлю под гравировку.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="ri-edit-line"></i>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Отправляю результат</h3>
+                        <p>Вы получаете готовый файл в нужном формате. Вношу правки при необходимости.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="ri-check-double-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Портфолио</span>
+                <h2 class="section-title">Примеры работ</h2>
+                <p class="section-desc">До и после — сравните исходник с результатом</p>
+            </div>
+            <div class="portfolio-slider" id="portfolioSlider">
+                <div class="portfolio-track">
+                    <div class="portfolio-item">
+                        <div class="portfolio-compare">
+                            <div class="compare-before">
+                                <img src="img/male.webp" alt="До ретуши" loading="lazy">
+                                <span class="compare-label">До</span>
+                            </div>
+                            <div class="compare-after">
+                                <img src="img/male.webp" alt="После ретуши" loading="lazy">
+                                <span class="compare-label">После</span>
+                            </div>
                         </div>
-                        <div class="pricing-card">
-                            <h3>Срок исполнения</h3>
-                            <div class="value">12 – 24 часа</div>
-                            <p class="desc">Стандартный срок выполнения заказа.</p>
-                        </div>
-                        <div class="pricing-card">
-                            <h3>Срочные заказы</h3>
-                            <div class="value">3 – 6 часов</div>
-                            <p class="desc">Выполнение в срочном порядке по договоренности.</p>
-                        </div>
-                        <div class="pricing-card">
-                            <h3>Объемы</h3>
-                            <div class="value">Индивидуально</div>
-                            <p class="desc">Для мастерских и при постоянных заказах от 10 в неделю.</p>
+                        <div class="portfolio-info">
+                            <h3>Портрет мужчины</h3>
+                            <p>Восстановление деталей, коррекция контраста для гравировки</p>
                         </div>
                     </div>
-                </section>
-
-                <section class="gallery">
-                    <h2>Примеры моих работ</h2>
-                    <div class="gallery-grid">
-                        <a href="img/male.webp">
-                            <picture>
-                                <source srcset="img/male.webp" type="image/webp">
-                                <img src="img/male.jpg" alt="Пример ретуши мужской портрет" loading="lazy">
-                            </picture>
-                        </a>
-                        <a href="img/female.webp">
-                            <picture>
-                            <source srcset="img/female.webp" type="image/webp">
-                            <img src="img/female.jpg" alt="Пример ретуши женский портрет" loading="lazy">
-                            </picture>
-                        </a>
+                    <div class="portfolio-item">
+                        <div class="portfolio-compare">
+                            <div class="compare-before">
+                                <img src="img/female.webp" alt="До ретуши" loading="lazy">
+                                <span class="compare-label">До</span>
+                            </div>
+                            <div class="compare-after">
+                                <img src="img/female.webp" alt="После ретуши" loading="lazy">
+                                <span class="compare-label">После</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Женский портрет</h3>
+                            <p>Мягкая ретушь с сохранением естественности</p>
+                        </div>
                     </div>
-                </section>
-
-                <div class="cta">
-                    <p><strong>Предлагаю бесплатный тест</strong></p>
-                    <p>Если вы ищете надежного мастера на постоянную основу или для разгрузки в сезон, присылайте 1–2 изображения. Я сделаю тестовую ретушь <strong>бесплатно</strong>.</p>
                 </div>
-            </main>
-
-            <footer>
-                <p>Буду рад обсудить детали сотрудничества!</p>
-                <p>С уважением,<br><strong>Александр</strong></p>
-
-                <div class="buttons">
-                    <a href="https://t.me/ganjavagen" target="_blank" rel="noopener noreferrer" class="btn btn-telegram">Telegram</a>
-                    <a href="https://wa.me/84946943543" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">WhatsApp</a>
+                <div class="portfolio-nav">
+                    <button class="portfolio-btn" id="portfolioPrev" aria-label="Предыдущий">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <div class="portfolio-dots" id="portfolioDots"></div>
+                    <button class="portfolio-btn" id="portfolioNext" aria-label="Следующий">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </button>
                 </div>
-            </footer>
+            </div>
         </div>
+    </section>
 
-        <div class="footer-note">
-            <p>Профессиональная ретушь фотографий для гравировки на памятниках</p>
+    <!-- Pricing Section -->
+    <section class="section pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Цены</span>
+                <h2 class="section-title">Прозрачное ценообразование</h2>
+                <p class="section-desc">Стоимость зависит от сложности исходника и объёма работ</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-icon">
+                            <i class="ri-user-line"></i>
+                        </div>
+                        <h3>Портретная ретушь</h3>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-value">1000 – 2000</span>
+                        <span class="price-currency">₽</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="ri-check-line"></i> Стандартная проработка лица</li>
+                        <li><i class="ri-check-line"></i> Коррекция контраста</li>
+                        <li><i class="ri-check-line"></i> Подготовка под гравировку</li>
+                        <li><i class="ri-check-line"></i> Срок 12-24 часа</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-block">Заказать</a>
+                </div>
+                <div class="pricing-card pricing-featured">
+                    <div class="pricing-badge">Популярно</div>
+                    <div class="pricing-header">
+                        <div class="pricing-icon">
+                            <i class="ri-magic-line"></i>
+                        </div>
+                        <h3>Сложный монтаж</h3>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-value">2000 – 4000</span>
+                        <span class="price-currency">₽</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="ri-check-line"></i> Замена фона или одежды</li>
+                        <li><i class="ri-check-line"></i> Сборка композиции</li>
+                        <li><i class="ri-check-line"></i> Работа по эскизу</li>
+                        <li><i class="ri-check-line"></i> До 3 правок бесплатно</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-block">Заказать</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-icon">
+                            <i class="ri-building-line"></i>
+                        </div>
+                        <h3>Для мастерских</h3>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-value">Индивидуально</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="ri-check-line"></i> Специальные цены</li>
+                        <li><i class="ri-check-line"></i> Приоритетные сроки</li>
+                        <li><i class="ri-check-line"></i> От 10 заказов в неделю</li>
+                        <li><i class="ri-check-line"></i> Персональный подход</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-block">Обсудить</a>
+                </div>
+            </div>
+            <div class="pricing-note">
+                <i class="ri-flashlight-line"></i>
+                <span>Срочный заказ (3-6 часов) — +50% к стоимости</span>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- SimpleLightbox JS -->
-    <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2/dist/simple-lightbox.min.js"></script>
-    <script>
-        new SimpleLightbox('.gallery-grid a', { 
-            captions: true,
-            captionSelector: 'img',
-            captionType: 'attr',
-            captionsData: 'alt',
-            animationSpeed: 250,
-            fadeSpeed: 250,
-            closeText: '✕',
-            navText: ['←', '→']
-        });
-    </script>
+    <!-- Trust Section -->
+    <section class="section trust" id="trust">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Доверие</span>
+                <h2 class="section-title">Почему нам доверяют</h2>
+            </div>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <i class="ri-shield-check-line"></i>
+                    <span>Гарантия качества</span>
+                </div>
+                <div class="trust-item">
+                    <i class="ri-secure-payment-line"></i>
+                    <span>Оплата после результата</span>
+                </div>
+                <div class="trust-item">
+                    <i class="ri-chat-3-line"></i>
+                    <span>Быстрая связь</span>
+                </div>
+                <div class="trust-item">
+                    <i class="ri-user-heart-line"></i>
+                    <span>Индивидуальный подход</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Часто задаваемые вопросы</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Какие форматы файлов вы принимаете?</span>
+                        <i class="ri-add-line"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Принимаю любые форматы: JPG, PNG, TIFF, RAW, PDF, сканы, фото с телефона. Даже скриншоты или фото документов. Главное — чтобы изображение было видимо.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Можно ли восстановить очень старое или повреждённое фото?</span>
+                        <i class="ri-add-line"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, работаю с любыми исходниками. Использую нейросети и ручную обработку, чтобы вытянуть максимум деталей. Присылайте — оценю и скажу, что можно сделать.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Какой размер файла нужен для гравировки?</span>
+                        <i class="ri-add-line"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Готовлю файл под ваши требования. Обычно это 300 DPI в размере будущего портрета. Если нужно — сделаю в нужном размере и формате для вашего станка.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Как происходит оплата?</span>
+                        <i class="ri-add-line"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Для новых клиентов — оплата после получения готовой работы. Для постоянных — индивидуальные условия. Принимаю переводы на карту или по реквизитам.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Сколько правок входит в стоимость?</span>
+                        <i class="ri-add-line"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>До 3 правок бесплатно. Если правки нужны из-за моей ошибки — без ограничений. Если изменились требования — обсуждается индивидуально.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Работаете ли с ритуальными агентствами?</span>
+                        <i class="ri-add-line"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, сотрудничаю с мастерскими по изготовлению памятников и ритуальными агентствами. Гибкие условия, специальные цены при постоянных заказах.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section" id="contact">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h2>Готовы начать?</h2>
+                    <p>Отправьте 1-2 фото — сделаю бесплатную тестовую ретушь. Оцените качество без обязательств.</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="https://t.me/ganjavagen" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-lg">
+                        <i class="ri-telegram-line"></i>
+                        Написать в Telegram
+                    </a>
+                    <a href="https://wa.me/84946943543" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                        <i class="ri-whatsapp-line"></i>
+                        Написать в WhatsApp
+                    </a>
+                </div>
+                <div class="cta-contact">
+                    <p><i class="ri-phone-line"></i> +7 (494) 694-35-43</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <i class="ri-focus-3-line"></i>
+                        <span>RetouchPro</span>
+                    </a>
+                    <p>Профессиональная ретушь фотографий для гравировки на памятниках</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Навигация</h4>
+                        <ul>
+                            <li><a href="#advantages">Преимущества</a></li>
+                            <li><a href="#process">Как это работает</a></li>
+                            <li><a href="#portfolio">Портфолио</a></li>
+                            <li><a href="#pricing">Цены</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Контакты</h4>
+                        <ul>
+                            <li><a href="https://t.me/ganjavagen" target="_blank" rel="noopener noreferrer"><i class="ri-telegram-line"></i> Telegram</a></li>
+                            <li><a href="https://wa.me/84946943543" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line"></i> WhatsApp</a></li>
+                            <li><a href="tel:+74946943543"><i class="ri-phone-line"></i> +7 (494) 694-35-43</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RetouchPro. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Наверх">
+        <i class="ri-arrow-up-line"></i>
+    </button>
 </body>
 </html>
