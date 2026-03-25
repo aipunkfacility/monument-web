@@ -1,0 +1,397 @@
+/* ============================================
+   Monument Web - Glassmorphism Design
+   ============================================ */
+
+/* --- CSS Variables (Dark Theme) --- */
+:root {
+    --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    --text-color: #e0e0e0;
+    --text-muted: #c0c0c0;
+    --text-dim: #a0a0a0;
+    --heading-color: #ffffff;
+    --accent-color: #3498db;
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --card-border: rgba(255, 255, 255, 0.15);
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --header-bg: rgba(255, 255, 255, 0.05);
+    --header-border: rgba(255, 255, 255, 0.1);
+    --pricing-bg: rgba(255, 255, 255, 0.06);
+    --pricing-border: rgba(255, 255, 255, 0.12);
+    --pricing-hover: rgba(255, 255, 255, 0.1);
+    --gallery-border: rgba(255, 255, 255, 0.1);
+    --cta-bg: rgba(52, 152, 219, 0.15);
+    --footer-bg: rgba(255, 255, 255, 0.03);
+    --footer-border: rgba(255, 255, 255, 0.1);
+    --footer-note-color: rgba(255, 255, 255, 0.4);
+    --btn-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --theme-toggle-bg: rgba(255, 255, 255, 0.1);
+    --theme-toggle-border: rgba(255, 255, 255, 0.2);
+    --theme-toggle-color: #ffffff;
+}
+
+/* --- Light Theme --- */
+[data-theme="light"] {
+    --bg-gradient: linear-gradient(135deg, #f0f2f5 0%, #e4e6eb 50%, #d1d5db 100%);
+    --text-color: #333333;
+    --text-muted: #555555;
+    --text-dim: #777777;
+    --heading-color: #1a1a2e;
+    --accent-color: #2980b9;
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --card-border: rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --header-bg: rgba(255, 255, 255, 0.5);
+    --header-border: rgba(0, 0, 0, 0.08);
+    --pricing-bg: rgba(255, 255, 255, 0.6);
+    --pricing-border: rgba(0, 0, 0, 0.08);
+    --pricing-hover: rgba(255, 255, 255, 0.8);
+    --gallery-border: rgba(0, 0, 0, 0.1);
+    --cta-bg: rgba(52, 152, 219, 0.1);
+    --footer-bg: rgba(255, 255, 255, 0.4);
+    --footer-border: rgba(0, 0, 0, 0.08);
+    --footer-note-color: rgba(0, 0, 0, 0.4);
+    --btn-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    --theme-toggle-bg: rgba(0, 0, 0, 0.08);
+    --theme-toggle-border: rgba(0, 0, 0, 0.15);
+    --theme-toggle-color: #333333;
+}
+
+/* --- Reset & Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* --- Layout --- */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+/* --- Header --- */
+header {
+    background: var(--header-bg);
+    padding: 50px 40px;
+    text-align: center;
+    border-bottom: 1px solid var(--header-border);
+    position: relative;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+header h1 {
+    color: var(--heading-color);
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s;
+}
+
+/* --- Theme Toggle --- */
+.theme-toggle {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: var(--theme-toggle-bg);
+    border: 1px solid var(--theme-toggle-border);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--theme-toggle-color);
+    transition: all 0.3s;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    background: var(--pricing-hover);
+}
+
+.theme-toggle i {
+    transition: transform 0.3s;
+}
+
+.theme-toggle:hover i {
+    transform: rotate(15deg);
+}
+
+/* --- Main Content --- */
+main {
+    padding: 40px;
+}
+
+h2 {
+    color: var(--heading-color);
+    font-size: 22px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 10px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+h3 {
+    color: var(--heading-color);
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+
+ul {
+    padding-left: 25px;
+    margin-bottom: 30px;
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    position: relative;
+    padding-left: 20px;
+    transition: color 0.3s;
+}
+
+ul li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+strong {
+    color: var(--heading-color);
+    transition: color 0.3s;
+}
+
+/* --- Pricing Section --- */
+.pricing {
+    margin: 30px 0;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.pricing-card {
+    background: var(--pricing-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--pricing-border);
+    border-radius: 12px;
+    padding: 25px;
+    transition: transform 0.2s, background 0.3s, border-color 0.3s;
+}
+
+.pricing-card:hover {
+    transform: translateY(-2px);
+    background: var(--pricing-hover);
+}
+
+.pricing-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: var(--accent-color);
+}
+
+.pricing-card .value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.pricing-card .desc {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-bottom: 0;
+    transition: color 0.3s;
+}
+
+/* --- Gallery --- */
+.gallery {
+    margin: 30px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--gallery-border);
+    display: block;
+    transition: transform 0.2s, border-color 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+}
+
+/* --- CTA Block --- */
+.cta {
+    background: var(--cta-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin: 30px 0;
+    transition: background 0.3s;
+}
+
+.cta p {
+    margin-bottom: 0;
+    color: var(--text-color);
+}
+
+/* --- Footer --- */
+footer {
+    background: var(--footer-bg);
+    padding: 30px 40px;
+    border-top: 1px solid var(--footer-border);
+    text-align: center;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+/* --- Buttons --- */
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--btn-shadow);
+}
+
+.btn-telegram {
+    background: rgba(0, 136, 204, 0.7);
+    border: 1px solid rgba(0, 136, 204, 0.5);
+}
+
+.btn-telegram:hover {
+    background: rgba(0, 136, 204, 0.9);
+}
+
+.btn-whatsapp {
+    background: rgba(37, 211, 102, 0.7);
+    border: 1px solid rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp:hover {
+    background: rgba(37, 211, 102, 0.9);
+}
+
+/* --- Footer Note --- */
+.footer-note {
+    margin-top: 30px;
+    padding: 20px;
+    font-size: 14px;
+    color: var(--footer-note-color);
+    text-align: center;
+    transition: color 0.3s;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 600px) {
+    header {
+        padding: 30px 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    main {
+        padding: 30px 20px;
+    }
+
+    footer {
+        padding: 30px 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+}

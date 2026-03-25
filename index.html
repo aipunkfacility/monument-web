@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ретушь для гравировки</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <header>
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <i class="ri-moon-line" id="themeIcon"></i>
+                </button>
+                <h1>Профессиональная ретушь для гравировки</h1>
+            </header>
+
+            <main>
+                <p><strong>Здравствуйте!</strong></p>
+                <p>Меня зовут Александр, я профессиональный дизайнер. Предлагаю помощь с подготовкой фотографий для гравировки по камню (лазер, ударный станок).</p>
+                <p>Делаю обработку с расчетом на конечный результат: чтобы на камне хорошо читалось лицо, сохранялся объем и не терялся контраст.</p>
+
+                <h2>Что я умею:</h2>
+                <ul>
+                    <li><strong>Качество «под камень»:</strong> глубокая прорисовка черт лица, волос и одежды.</li>
+                    <li><strong>Сложный монтаж:</strong> замена одежды, фона, сборка людей в полный рост, подстройка под эскиз заказчика.</li>
+                    <li><strong>Техническая точность:</strong> готовлю файлы строго под ваши требования и технологию.</li>
+                    <li><strong>Продвинутые технологии:</strong> использование нейросетей и алгоритмов для вытягивания деталей из критически плохих фото.</li>
+                </ul>
+
+                <section class="pricing">
+                    <h2>Стоимость и сроки</h2>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <h3>Ретушь портрета</h3>
+                            <div class="value">1000 – 2000 ₽</div>
+                            <p class="desc">Финальная цена зависит от качества исходника и необходимости сложного монтажа.</p>
+                        </div>
+                        <div class="pricing-card">
+                            <h3>Срок исполнения</h3>
+                            <div class="value">12 – 24 часа</div>
+                            <p class="desc">Стандартный срок выполнения заказа.</p>
+                        </div>
+                        <div class="pricing-card">
+                            <h3>Срочные заказы</h3>
+                            <div class="value">3 – 6 часов</div>
+                            <p class="desc">Выполнение в срочном порядке по договоренности.</p>
+                        </div>
+                        <div class="pricing-card">
+                            <h3>Объемы</h3>
+                            <div class="value">Индивидуально</div>
+                            <p class="desc">Для мастерских и при постоянных заказах от 10 в неделю.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="gallery">
+                    <h2>Примеры моих работ</h2>
+                    <div class="gallery-grid">
+                        <img src="img/male.jpg" alt="Пример ретуши мужской портрет">
+                        <img src="img/female.jpg" alt="Пример ретуши женский портрет">
+                    </div>
+                </section>
+
+                <div class="cta">
+                    <p><strong>Предлагаю бесплатный тест</strong></p>
+                    <p>Если вы ищете надежного мастера на постоянную основу или для разгрузки в сезон, присылайте 1–2 изображения. Я сделаю тестовую ретушь <strong>бесплатно</strong>.</p>
+                </div>
+            </main>
+
+            <footer>
+                <p>Буду рад обсудить детали сотрудничества!</p>
+                <p>С уважением,<br><strong>Александр</strong></p>
+
+                <div class="buttons">
+                    <a href="https://t.me/ganjavagen" target="_blank" class="btn btn-telegram">Telegram</a>
+                    <a href="https://wa.me/84946943543" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                </div>
+            </footer>
+        </div>
+
+        <div class="footer-note">
+            <p>Профессиональная ретушь фотографий для гравировки на памятниках</p>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to dark
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+        updateToggleIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleIcon(newTheme);
+        });
+
+        function updateToggleIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'ri-sun-line';
+                themeToggle.setAttribute('aria-label', 'Переключить на светлую тему');
+            } else {
+                themeIcon.className = 'ri-moon-line';
+                themeToggle.setAttribute('aria-label', 'Переключить на тёмную тему');
+            }
+        }
+    </script>
+</body>
+</html>
