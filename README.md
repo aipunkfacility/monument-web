@@ -14,14 +14,17 @@
 monument-web/
 ├── index.html              # Основной сайт (лендинг)
 ├── css/
-│   └── style.css           # Стили (glassmorphism + темы)
+│   └── style.css          # Стили (glassmorphism + темы)
+├── js/
+│   └── theme.js           # JavaScript для переключения тем
 ├── img/
-│   ├── male.jpg            # Пример ретуши (мужской портрет)
-│   └── female.jpg          # Пример ретуши (женский портрет)
+│   ├── favicon.svg        # Favicon
+│   ├── male.webp          # Пример ретуши (мужской портрет)
+│   └── female.webp        # Пример ретуши (женский портрет)
 ├── email/
-│   └── email.html          # Email-шаблон для рассылки
-├── README.md               # Документация проекта
-└── AGENTS.md               # Руководство для AI-агентов
+│   └── email.html         # Email-шаблон для рассылки
+├── README.md              # Документация проекта
+└── AGENTS.md             # Руководство для AI-агентов
 ```
 
 ## Запуск
@@ -47,13 +50,14 @@ python -m http.server 8000
 - **Темы:** Тёмная и светлая с переключателем
 - **Адаптивность:** Мобильные устройства (320px+)
 - **Иконки:** Remix Icon v4.2.0
+- **Изображения:** WebP с lazy loading
 
 ### Email-шаблон
 
 - **Вёрстка:** Табличная (для совместимости с email клиентами)
 - **Стили:** Инлайновые (Outlook, Gmail)
 - **Ширина:** 600px (стандарт для email)
-- **Изображения:** Внешний CDN (memorial-img.netlify.app)
+- **Версии:** HTML + Plain-text
 
 ## Секция "Стоимость и сроки"
 
@@ -75,6 +79,11 @@ python -m http.server 8000
 - CSS3 (переменные, flexbox, grid, backdrop-filter)
 - JavaScript (переключение тем, localStorage)
 - Remix Icon (CDN)
+- WebP изображения
+
+## GitHub
+
+Репозиторий: [https://github.com/aipunkfacility/monument-web](https://github.com/aipunkfacility/monument-web)
 
 ## Лицензия
 

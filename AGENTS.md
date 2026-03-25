@@ -8,10 +8,15 @@
 
 ```
 monument-web/
-├── index.html          # Основная страница
+├── index.html          # Основная страница (лендинг)
 ├── css/
 │   └── style.css       # Все стили (glassmorphism + темы)
-├── img/                # Локальные изображения
+├── js/
+│   └── theme.js        # JavaScript для переключения тем
+├── img/
+│   ├── favicon.svg     # Favicon
+│   ├── male.webp       # Пример ретуши (мужской портрет)
+│   └── female.webp     # Пример ретуши (женский портрет)
 ├── email/
 │   └── email.html      # Email-шаблон для рассылки
 ├── README.md           # Документация проекта
@@ -40,6 +45,7 @@ monument-web/
 - UTF-8 и viewport meta
 - Alt текст для изображений
 - Стили подключаются через `<link rel="stylesheet" href="css/style.css">`
+- JavaScript подключается через `<script src="js/theme.js" defer></script>`
 
 ### CSS - Glassmorphism + Темы
 
@@ -52,17 +58,20 @@ monument-web/
 - Все стили в `css/style.css`, не в `<style>` тегах
 - **CSS переменные** для тем (`:root` и `[data-theme="light"]`)
 - **Переключатель тем** в header (кнопка с иконкой)
+- **Fallback** для старых браузеров без backdrop-filter (`@supports`)
 
 ### JavaScript
 
 - Минимальный код для переключения тем
 - Сохранение выбора в `localStorage`
 - Обновление иконки кнопки
+- Используй IIFE (immediately invoked function expression) для изоляции
 
 ### Иконки
 
 - Remix Icon через CDN (`ri-sun-line`, `ri-moon-line`)
 - Подключение: `<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">`
+- Preconnect для CDN: `<link rel="preconnect" href="https://cdn.jsdelivr.net">`
 
 ### Форматирование
 
@@ -78,7 +87,14 @@ monument-web/
 ### Изображения
 
 - Локальные файлы в `img/`
+- Формат WebP с fallback на JPG
 - Всегда `alt` атрибут
+- Lazy loading: `loading="lazy"`
+- Используй `<picture>` для WebP с fallback
+
+### Безопасность
+
+- Все внешние ссылки с `target="_blank"` должны иметь `rel="noopener noreferrer"`
 
 ---
 
@@ -89,24 +105,36 @@ monument-web/
 3. Проверяйте в браузере
 4. Следуйте glassmorphism стилю (blur, transparency, тёмный фон)
 5. Стили — только в `css/style.css`
-6. При добавлении новых цветов — используйте CSS переменные
+6. JavaScript — только в `js/`
+7. При добавлении новых цветов — используйте CSS переменные
 
 ---
 
 ## Чеклист
 
-- [ ] HTML валидный
-- [ ] Адаптивная вёрстка (320px, 768px)
-- [ ] Все ссылки работают
-- [ ] Изображения загружаются
-- [ ] Glassmorphism эффекты работают (blur)
-- [ ] Переключатель тем работает
-- [ ] Выбор темы сохраняется
+- [x] HTML валидный
+- [x] Адаптивная вёрстка (320px, 768px)
+- [x] Все ссылки работают
+- [x] Изображения загружаются
+- [x] Glassmorphism эффекты работают (blur)
+- [x] Переключатель тем работает
+- [x] Выбор темы сохраняется
+- [x] Lazy loading для изображений
+- [x] WebP формат с fallback
+
+---
+
+## Git
+
+Репозиторий: https://github.com/aipunkfacility/monument-web
+
+Ветка: main
 
 ---
 
 ## Примечания
 
 - Простой статический сайт - без сборки
-- Чистый HTML + CSS + минимум JavaScript
+- Чистый HTML + CSS + JavaScript
 - Поддержка тёмной и светлой темы
+- Email шаблон включает HTML и plain-text версию
