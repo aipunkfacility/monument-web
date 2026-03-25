@@ -12,8 +12,10 @@ monument-web/
 ├── css/
 │   └── style.css       # Все стили (glassmorphism + темы)
 ├── img/                # Локальные изображения
-├── AGENTS.md           # Это руководство
-└── pricing-section-prompt.txt  # Исходный промпт для секции цен
+├── email/
+│   └── email.html      # Email-шаблон для рассылки
+├── README.md           # Документация проекта
+└── AGENTS.md           # Это руководство
 ```
 
 Дизайн: **Glassmorphism** (тёмный фон, стеклянные карточки) + **светлая тема**.

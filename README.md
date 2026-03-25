@@ -20,8 +20,8 @@ monument-web/
 │   └── female.jpg          # Пример ретуши (женский портрет)
 ├── email/
 │   └── email.html          # Email-шаблон для рассылки
-├── AGENTS.md               # Руководство для AI-агентов
-└── pricing-section-prompt.txt  # Исходный промпт для секции цен
+├── README.md               # Документация проекта
+└── AGENTS.md               # Руководство для AI-агентов
 ```
 
 ## Запуск
