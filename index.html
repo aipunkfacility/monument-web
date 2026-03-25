@@ -25,6 +25,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox@2/dist/simple-lightbox.min.css">
     
     <!-- Scripts -->
     <script src="js/theme.js" defer></script>
@@ -81,14 +82,18 @@
                 <section class="gallery">
                     <h2>Примеры моих работ</h2>
                     <div class="gallery-grid">
-                        <picture>
-                            <source srcset="img/male.webp" type="image/webp">
-                            <img src="img/male.jpg" alt="Пример ретуши мужской портрет" loading="lazy">
-                        </picture>
-                        <picture>
+                        <a href="img/male.webp">
+                            <picture>
+                                <source srcset="img/male.webp" type="image/webp">
+                                <img src="img/male.jpg" alt="Пример ретуши мужской портрет" loading="lazy">
+                            </picture>
+                        </a>
+                        <a href="img/female.webp">
+                            <picture>
                             <source srcset="img/female.webp" type="image/webp">
                             <img src="img/female.jpg" alt="Пример ретуши женский портрет" loading="lazy">
-                        </picture>
+                            </picture>
+                        </a>
                     </div>
                 </section>
 
@@ -113,5 +118,20 @@
             <p>Профессиональная ретушь фотографий для гравировки на памятниках</p>
         </div>
     </div>
+
+    <!-- SimpleLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2/dist/simple-lightbox.min.js"></script>
+    <script>
+        new SimpleLightbox('.gallery-grid a', { 
+            captions: true,
+            captionSelector: 'img',
+            captionType: 'attr',
+            captionsData: 'alt',
+            animationSpeed: 250,
+            fadeSpeed: 250,
+            closeText: '✕',
+            navText: ['←', '→']
+        });
+    </script>
 </body>
 </html>

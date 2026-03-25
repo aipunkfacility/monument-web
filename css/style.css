@@ -258,6 +258,11 @@ strong {
     gap: 20px;
 }
 
+.gallery-grid a {
+    display: block;
+    cursor: pointer;
+}
+
 .gallery-grid img {
     width: 100%;
     height: auto;
@@ -267,7 +272,7 @@ strong {
     transition: transform 0.2s, border-color 0.3s;
 }
 
-.gallery-grid img:hover {
+.gallery-grid a:hover img {
     transform: scale(1.02);
 }
 
