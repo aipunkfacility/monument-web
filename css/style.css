@@ -1286,7 +1286,7 @@ body {
         top: 70px;
         left: 0;
         right: 0;
-        background: var(--navbar-bg);
+        background: rgba(26, 26, 46, 0.98);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         flex-direction: column;
@@ -1471,6 +1471,12 @@ body {
         background: rgba(255, 255, 255, 0.95);
     }
     
+    @media (max-width: 900px) {
+        [data-theme="light"] .navbar-menu {
+            background: rgba(255, 255, 255, 0.98);
+        }
+    }
+    
     [data-theme="light"] .advantage-card,
     [data-theme="light"] .pricing-card,
     [data-theme="light"] .faq-item,
@@ -1489,7 +1495,7 @@ body {
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .animate-on-scroll.visible {
