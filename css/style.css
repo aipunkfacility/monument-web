@@ -1200,6 +1200,17 @@ body {
     color: #ffffff;
 }
 
+.btn-email {
+    background: rgba(52, 152, 219, 0.8);
+    border: 1px solid rgba(52, 152, 219, 0.5);
+    color: #ffffff;
+}
+
+.btn-email:hover {
+    background: rgba(52, 152, 219, 1);
+    color: #ffffff;
+}
+
 .btn-block {
     width: 100%;
 }
