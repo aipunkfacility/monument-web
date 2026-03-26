@@ -795,21 +795,6 @@ nav {
     gap: 10px;
 }
 
-.portfolio-dot {
-    width: 12px;
-    height: 12px;
-    background: var(--card-border);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    border: none;
-}
-
-.portfolio-dot.active {
-    background: var(--accent-color);
-    transform: scale(1.2);
-}
-
 /* ============================================
    Pricing Section
    ============================================ */
@@ -1935,8 +1920,8 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 12px;
-    height: 12px;
+    width: 6px;
+    height: 6px;
     background: var(--card-border);
     border-radius: 50%;
     transition: all var(--transition-fast);
@@ -1945,7 +1930,6 @@ nav {
 .portfolio-dot:hover::before,
 .portfolio-dot.active::before {
     background: var(--accent-color);
-    transform: translate(-50%, -50%) scale(1.2);
 }
 
 /* ============================================
