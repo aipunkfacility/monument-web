@@ -1412,22 +1412,25 @@ body {
         align-items: center;
         justify-content: flex-end;
         text-align: center;
-        overflow: hidden;
     }
 
     /* Show mobile hero image */
     .hero-bg {
         display: block;
-        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 
     .hero-mobile-img {
         display: block;
+        width: 100%;
+        height: auto;
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: auto;
         z-index: 0;
     }
 
