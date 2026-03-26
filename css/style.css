@@ -141,6 +141,25 @@ body {
     transition: background var(--transition-normal), color var(--transition-normal);
 }
 
+/* Prevent horizontal overflow */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+section,
+main,
+footer,
+nav {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 /* --- Skip Link (Accessibility) --- */
 .skip-link {
     position: absolute;
@@ -597,6 +616,8 @@ body {
     padding: 30px 0;
     border-bottom: 1px solid var(--card-border);
     transition: all var(--transition-normal);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .process-step:last-child {
@@ -607,7 +628,7 @@ body {
     background: var(--card-bg);
     border-radius: 12px;
     padding: 30px;
-    margin: 0 -30px;
+    margin: 0;
 }
 
 .step-number {
@@ -1415,6 +1436,8 @@ body {
         width: 100%;
         padding: 0 16px;
         box-sizing: border-box;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
     /* Ensure all content fits */
@@ -1425,10 +1448,32 @@ body {
     .advantage-card,
     .pricing-card,
     .trust-item,
-    .faq-item {
+    .faq-item,
+    .process-step,
+    .cta-box,
+    .portfolio-grid {
         word-wrap: break-word;
         overflow-wrap: break-word;
         box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    /* Fix for process steps */
+    .process-step {
+        grid-template-columns: 50px 1fr;
+        gap: 16px;
+        padding: 20px 0;
+        max-width: 100%;
+    }
+
+    .process-step:hover {
+        padding: 20px;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .step-icon {
+        display: none;
     }
 
     .hero {
@@ -1465,15 +1510,15 @@ body {
         display: none;
     }
 
-    /* Gradient overlay in bottom half (50%-100% of height) */
+    /* Gradient overlay from 40% to 100% of height */
     .hero-bg::after {
         content: '';
         position: absolute;
-        top: 50%;
+        top: 40%;
         left: 0;
         right: 0;
         bottom: 0;
-        height: 50%;
+        height: 60%;
         background: linear-gradient(
             to bottom,
             transparent 0%,
@@ -1532,14 +1577,7 @@ body {
         gap: 20px;
     }
     
-    .process-step {
-        grid-template-columns: 50px 1fr;
-        gap: 20px;
-    }
-    
-    .step-icon {
-        display: none;
-    }
+
     
     .pricing-grid {
         grid-template-columns: 1fr;
@@ -1654,8 +1692,14 @@ body {
     }
 
     .process-step:hover {
-        padding: 20px;
-        margin: 0 -10px;
+        padding: 15px;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .process-step {
+        grid-template-columns: 45px 1fr;
+        gap: 12px;
     }
 
     .step-number {
@@ -1735,6 +1779,22 @@ body {
 
     .portfolio-item {
         border-radius: 8px;
+    }
+
+    .process-step {
+        grid-template-columns: 40px 1fr;
+        gap: 10px;
+    }
+
+    .process-step:hover {
+        padding: 12px;
+        margin: 0;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
     }
 }
 
