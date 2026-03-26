@@ -134,6 +134,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     min-height: 100vh;
+    overflow-x: hidden;
     transition: background var(--transition-normal), color var(--transition-normal);
 }
 
@@ -1401,7 +1402,15 @@ body {
     .section {
         padding: 70px 0;
     }
-    
+
+    .hero {
+        padding: 100px 15px 60px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
     .advantages-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -1428,16 +1437,29 @@ body {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
+    .hero-badge {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+    }
+
     .cta-box {
         padding: 40px 25px;
     }
-    
+
     .cta-buttons {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .footer-links {
         grid-template-columns: 1fr;
         gap: 30px;
