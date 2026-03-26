@@ -368,9 +368,9 @@ body {
 [data-theme="light"] .hero-overlay {
     background: linear-gradient(
         90deg,
-        rgba(240, 242, 245, 0.85) 0%,
-        rgba(228, 230, 235, 0.65) 50%,
-        rgba(209, 213, 219, 0.45) 100%
+        rgba(240, 242, 245, 0.7) 0%,
+        rgba(228, 230, 235, 0.5) 50%,
+        rgba(209, 213, 219, 0.3) 100%
     );
 }
 
