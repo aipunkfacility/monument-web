@@ -2,6 +2,8 @@
 (function() {
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
+    const themeToggleMobile = document.getElementById('themeToggleMobile');
+    const themeIconMobile = document.getElementById('themeIconMobile');
     const html = document.documentElement;
 
     // Theme states: 'dark', 'light', 'system'
@@ -26,8 +28,8 @@
         html.setAttribute('data-theme-mode', themeState); // Store the mode (dark/light/system)
     }
     
-    // Update toggle button icon
-    function updateToggleIcon(themeState) {
+    // Update toggle button icons
+    function updateToggleIcons(themeState) {
         const icons = {
             dark: 'ri-moon-line',
             light: 'ri-sun-line',
@@ -40,8 +42,20 @@
             system: 'Переключить на тёмную тему'
         };
         
-        themeIcon.className = icons[themeState] || icons.system;
-        themeToggle.setAttribute('aria-label', labels[themeState]);
+        const iconClass = icons[themeState] || icons.system;
+        
+        if (themeIcon) {
+            themeIcon.className = iconClass;
+        }
+        if (themeIconMobile) {
+            themeIconMobile.className = iconClass;
+        }
+        if (themeToggle) {
+            themeToggle.setAttribute('aria-label', labels[themeState]);
+        }
+        if (themeToggleMobile) {
+            themeToggleMobile.setAttribute('aria-label', labels[themeState]);
+        }
     }
     
     // Get saved theme preference or default to 'system'
@@ -57,23 +71,31 @@
     
     // Apply initial theme
     applyTheme(savedThemeState);
-    updateToggleIcon(savedThemeState);
+    updateToggleIcons(savedThemeState);
 
-    // Toggle through theme states
-    themeToggle.addEventListener('click', () => {
+    // Toggle function
+    function toggleTheme() {
         const currentIndex = THEME_STATES.indexOf(html.getAttribute('data-theme-mode') || 'system');
         const nextIndex = (currentIndex + 1) % THEME_STATES.length;
         const newThemeState = THEME_STATES[nextIndex];
         
         applyTheme(newThemeState);
-        updateToggleIcon(newThemeState);
+        updateToggleIcons(newThemeState);
         
         try {
             localStorage.setItem('theme-mode', newThemeState);
         } catch (e) {
             console.warn('Could not save theme preference');
         }
-    });
+    }
+    
+    // Add event listeners to both toggles
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    if (themeToggleMobile) {
+        themeToggleMobile.addEventListener('click', toggleTheme);
+    }
     
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {

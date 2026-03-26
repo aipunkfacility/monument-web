@@ -295,6 +295,47 @@ body {
     transform: rotate(15deg);
 }
 
+/* Mobile theme toggle in menu */
+.theme-toggle-mobile {
+    width: 100%;
+    height: auto;
+    padding: 12px 20px;
+    border-radius: 8px;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.theme-toggle-mobile span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.navbar-theme-item {
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--card-border);
+}
+
+/* Desktop theme toggle */
+.theme-toggle-desktop {
+    display: flex;
+}
+
+.theme-toggle-mobile {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .theme-toggle-desktop {
+        display: none;
+    }
+    
+    .theme-toggle-mobile {
+        display: flex;
+    }
+}
+
 /* ============================================
    Hero Section
    ============================================ */
