@@ -202,8 +202,18 @@ nav {
     right: 0;
     z-index: 10000;
     background: var(--navbar-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--navbar-border);
     transition: all var(--transition-normal);
+}
+
+/* Disable backdrop-filter on mobile to prevent stacking context issues */
+@media (max-width: 900px) {
+    .navbar {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
 }
 
 .navbar-container {
