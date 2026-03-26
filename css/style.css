@@ -327,16 +327,6 @@ body {
     display: none;
 }
 
-@media (max-width: 900px) {
-    .theme-toggle-desktop {
-        display: none;
-    }
-    
-    .theme-toggle-mobile {
-        display: flex;
-    }
-}
-
 /* ============================================
    Hero Section
    ============================================ */
@@ -1385,13 +1375,21 @@ body {
         margin-left: 0;
         margin-top: 10px;
     }
-    
+
     .navbar-toggle {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    
+
+    .theme-toggle-desktop {
+        display: none;
+    }
+
+    .theme-toggle-mobile {
+        display: flex;
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 40px;
