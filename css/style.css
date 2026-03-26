@@ -1613,7 +1613,11 @@ body {
     }
 
     .hero {
-        padding: 100px 12px 60px;
+        height: 100vh;
+        padding: 0 12px 30px;
+        align-items: center;
+        justify-content: flex-end;
+        text-align: center;
     }
 
     .hero-badge {
@@ -1675,7 +1679,11 @@ body {
     }
 
     .hero {
-        padding: 90px 10px 50px;
+        height: 100vh;
+        padding: 0 10px 25px;
+        align-items: center;
+        justify-content: flex-end;
+        text-align: center;
     }
 
     .hero-title {
