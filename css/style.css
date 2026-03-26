@@ -1401,12 +1401,9 @@ body {
         padding: 70px 0;
     }
 
+    /* Hide hero on mobile until proper mobile images are ready */
     .hero {
-        padding: 100px 15px 60px;
-    }
-
-    .hero-content {
-        max-width: 100%;
+        display: none;
     }
 
     .advantages-grid {
@@ -1430,23 +1427,10 @@ body {
     .trust-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .portfolio-grid {
         grid-template-columns: 1fr;
         gap: 15px;
-    }
-
-    .hero-badge {
-        font-size: 12px;
-        padding: 6px 14px;
-    }
-
-    .hero-cta {
-        flex-direction: column;
-    }
-
-    .hero-cta .btn {
-        width: 100%;
     }
 
     .cta-box {
@@ -1494,31 +1478,6 @@ body {
         padding: 0 12px;
     }
 
-    .hero {
-        padding: 100px 12px 60px;
-    }
-
-    .hero-badge {
-        font-size: 11px;
-        padding: 5px 10px;
-    }
-
-    .hero-title {
-        font-size: 22px;
-    }
-
-    .hero-subtitle {
-        font-size: 14px;
-    }
-
-    .hero-cta {
-        flex-direction: column;
-    }
-
-    .hero-cta .btn {
-        width: 100%;
-    }
-
     .advantage-card {
         padding: 20px 15px;
     }
@@ -1554,18 +1513,6 @@ body {
 @media (max-width: 360px) {
     .container {
         padding: 0 10px;
-    }
-
-    .hero {
-        padding: 90px 10px 50px;
-    }
-
-    .hero-title {
-        font-size: 18px;
-    }
-
-    .hero-subtitle {
-        font-size: 12px;
     }
 
     .section-title {
