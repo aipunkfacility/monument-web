@@ -200,13 +200,12 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 10000;
     background: var(--navbar-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--navbar-border);
     transition: all var(--transition-normal);
-    isolation: isolate;
 }
 
 .navbar-container {
@@ -1378,8 +1377,8 @@ nav {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         opacity: 0;
         visibility: hidden;
-        transition: all var(--transition-normal);
-        z-index: 9999;
+        transition: top 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 10000;
     }
     
     [data-theme="dark"] .navbar-menu {
@@ -1391,7 +1390,6 @@ nav {
         top: 70px;
         opacity: 1;
         visibility: visible;
-        z-index: 99999 !important;
     }
     
     .navbar-menu li {
