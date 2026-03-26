@@ -1470,37 +1470,57 @@ body {
     .navbar-container {
         height: 60px;
     }
-    
+
     .navbar-logo span {
         display: none;
     }
-    
+
+    .container {
+        padding: 0 12px;
+    }
+
     .hero {
-        padding: 100px 15px 60px;
+        padding: 100px 12px 60px;
     }
-    
+
     .hero-badge {
-        font-size: 12px;
-        padding: 6px 14px;
+        font-size: 11px;
+        padding: 5px 10px;
     }
-    
+
+    .hero-title {
+        font-size: 22px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
     .hero-cta {
         flex-direction: column;
     }
-    
+
     .hero-cta .btn {
         width: 100%;
     }
-    
+
     .advantage-card {
-        padding: 25px 20px;
+        padding: 20px 15px;
     }
-    
+
+    .pricing-card {
+        padding: 25px 15px;
+    }
+
+    .trust-item {
+        padding: 15px;
+    }
+
     .process-step:hover {
         padding: 20px;
         margin: 0 -10px;
     }
-    
+
     .step-number {
         width: 50px;
         height: 50px;
@@ -1512,6 +1532,68 @@ body {
         right: 20px;
         width: 45px;
         height: 45px;
+    }
+}
+
+/* Very small screens (older phones) */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .hero {
+        padding: 90px 10px 50px;
+    }
+
+    .hero-title {
+        font-size: 18px;
+    }
+
+    .hero-subtitle {
+        font-size: 12px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .section-desc {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .advantage-card {
+        padding: 15px 12px;
+    }
+
+    .advantage-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .pricing-card {
+        padding: 20px 12px;
+    }
+
+    .price-value {
+        font-size: 28px;
+    }
+
+    .trust-item {
+        padding: 12px;
+    }
+
+    .trust-item i {
+        font-size: 24px;
+    }
+
+    .portfolio-item {
+        border-radius: 8px;
     }
 }
 
