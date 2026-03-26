@@ -206,6 +206,7 @@ nav {
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--navbar-border);
     transition: all var(--transition-normal);
+    isolation: isolate;
 }
 
 .navbar-container {
@@ -1390,6 +1391,7 @@ nav {
         top: 70px;
         opacity: 1;
         visibility: visible;
+        z-index: 99999 !important;
     }
     
     .navbar-menu li {
@@ -1482,7 +1484,8 @@ nav {
         align-items: center;
         justify-content: flex-end;
         text-align: center;
-        z-index: 0;
+        position: relative;
+        z-index: 1;
     }
 
     /* Show mobile hero image */
@@ -1544,6 +1547,7 @@ nav {
         max-width: 100%;
         z-index: 2;
         padding-bottom: 20px;
+        position: relative;
     }
 
     .hero-title {
@@ -1657,7 +1661,8 @@ nav {
         align-items: center;
         justify-content: flex-end;
         text-align: center;
-        z-index: 0;
+        position: relative;
+        z-index: 1;
     }
 
     .hero-badge {
@@ -1730,7 +1735,8 @@ nav {
         align-items: center;
         justify-content: flex-end;
         text-align: center;
-        z-index: 0;
+        position: relative;
+        z-index: 1;
     }
 
     .hero-title {
