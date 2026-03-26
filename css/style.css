@@ -1483,6 +1483,7 @@ nav {
         align-items: center;
         justify-content: flex-end;
         text-align: center;
+        z-index: 0;
     }
 
     /* Show mobile hero image */
@@ -1657,6 +1658,7 @@ nav {
         align-items: center;
         justify-content: flex-end;
         text-align: center;
+        z-index: 0;
     }
 
     .hero-badge {
@@ -1729,6 +1731,7 @@ nav {
         align-items: center;
         justify-content: flex-end;
         text-align: center;
+        z-index: 0;
     }
 
     .hero-title {
