@@ -799,8 +799,8 @@ nav {
 }
 
 .portfolio-dot {
-    width: 6px;
-    height: 6px;
+    width: 10px;
+    height: 10px;
     background: var(--card-border);
     border-radius: 50%;
     cursor: pointer;
@@ -812,6 +812,7 @@ nav {
 .portfolio-dot:hover,
 .portfolio-dot.active {
     background: var(--accent-color);
+    transform: scale(1.2);
 }
 
 /* ============================================
