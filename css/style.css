@@ -1437,29 +1437,32 @@ body {
         display: none;
     }
 
-    /* Gradient overlay only at bottom for text, not covering portrait */
+    /* Gradient overlay in bottom half (50%-100% of height) */
     .hero-bg::after {
         content: '';
         position: absolute;
-        bottom: 0;
+        top: 50%;
         left: 0;
         right: 0;
-        height: 180px;
+        bottom: 0;
+        height: 50%;
         background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.95) 0%,
-            rgba(0, 0, 0, 0.7) 50%,
-            transparent 100%
+            to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.3) 10%,
+            rgba(0, 0, 0, 0.7) 40%,
+            rgba(0, 0, 0, 0.95) 100%
         );
         z-index: 1;
     }
 
     [data-theme="light"] .hero-bg::after {
         background: linear-gradient(
-            to top,
-            rgba(255, 255, 255, 0.98) 0%,
-            rgba(255, 255, 255, 0.85) 50%,
-            transparent 100%
+            to bottom,
+            transparent 0%,
+            rgba(255, 255, 255, 0.3) 10%,
+            rgba(255, 255, 255, 0.7) 40%,
+            rgba(255, 255, 255, 0.98) 100%
         );
     }
 
