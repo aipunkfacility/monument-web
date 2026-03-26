@@ -1412,11 +1412,13 @@ body {
         align-items: center;
         justify-content: flex-end;
         text-align: center;
+        overflow: hidden;
     }
 
     /* Show mobile hero image */
     .hero-bg {
         display: block;
+        overflow: hidden;
     }
 
     .hero-mobile-img {
