@@ -1409,7 +1409,8 @@ body {
     .hero {
         height: 100vh;
         padding: 0 20px 30px;
-        align-items: flex-end;
+        align-items: center;
+        justify-content: flex-end;
         text-align: center;
     }
 
