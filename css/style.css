@@ -1388,6 +1388,7 @@ nav {
         top: 70px;
         opacity: 1;
         visibility: visible;
+        background: #ff0000 !important;
     }
     
     .navbar-menu li {
