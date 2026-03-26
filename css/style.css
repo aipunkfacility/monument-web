@@ -691,7 +691,7 @@ nav {
 .portfolio-slider {
     position: relative;
     overflow: visible;
-    margin: 0 60px;
+    margin: 0 70px;
 }
 
 .portfolio-slider-wrapper {
@@ -779,11 +779,11 @@ nav {
 }
 
 .portfolio-btn-prev {
-    left: -60px;
+    left: -50px;
 }
 
 .portfolio-btn-next {
-    right: -60px;
+    right: -50px;
 }
 
 .portfolio-btn:hover {
@@ -796,6 +796,22 @@ nav {
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+.portfolio-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--card-border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: none;
+    padding: 0;
+}
+
+.portfolio-dot:hover,
+.portfolio-dot.active {
+    background: var(--accent-color);
 }
 
 /* ============================================
@@ -1907,32 +1923,6 @@ nav {
 .portfolio-dot:focus-visible {
     outline: 2px solid var(--accent-color);
     outline-offset: 2px;
-}
-
-/* Increase touch target for portfolio dots */
-.portfolio-dot {
-    width: 44px;
-    height: 44px;
-    background: transparent;
-    position: relative;
-}
-
-.portfolio-dot::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 6px;
-    height: 6px;
-    background: var(--card-border);
-    border-radius: 50%;
-    transition: all var(--transition-fast);
-}
-
-.portfolio-dot:hover::before,
-.portfolio-dot.active::before {
-    background: var(--accent-color);
 }
 
 /* ============================================
