@@ -690,7 +690,8 @@ nav {
    ============================================ */
 .portfolio-slider {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    margin: 0 60px;
 }
 
 .portfolio-slider-wrapper {
@@ -701,6 +702,8 @@ nav {
 .portfolio-track {
     display: flex;
     transition: transform 0.5s ease;
+    overflow: hidden;
+    border-radius: 12px;
 }
 
 .portfolio-slide {
@@ -776,11 +779,11 @@ nav {
 }
 
 .portfolio-btn-prev {
-    left: 10px;
+    left: -60px;
 }
 
 .portfolio-btn-next {
-    right: 10px;
+    right: -60px;
 }
 
 .portfolio-btn:hover {
