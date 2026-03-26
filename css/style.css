@@ -1379,6 +1379,7 @@ nav {
         opacity: 0;
         visibility: hidden;
         transition: all var(--transition-normal);
+        z-index: 1001;
     }
     
     [data-theme="dark"] .navbar-menu {
