@@ -1402,11 +1402,50 @@ body {
     }
 
     .hero {
-        padding: 100px 15px 60px;
+        padding: 120px 20px 60px;
+        min-height: auto;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        align-items: center;
+        text-align: center;
+    }
+
+    [data-theme="light"] .hero {
+        background: linear-gradient(135deg, #f0f2f5 0%, #e4e6eb 50%, #d1d5db 100%);
+    }
+
+    /* Hide hero background images on mobile */
+    .hero-bg {
+        display: none;
     }
 
     .hero-content {
         max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 28px;
+        color: #ffffff;
+    }
+
+    [data-theme="light"] .hero-title {
+        color: #1a1a2e;
+        text-shadow: none;
+    }
+
+    .hero-subtitle {
+        color: #ffffff;
+    }
+
+    [data-theme="light"] .hero-subtitle {
+        color: #333333;
+    }
+
+    .hero-badge {
+        margin: 0 auto 30px;
+    }
+
+    .hero-cta {
+        justify-content: center;
     }
 
     .advantages-grid {
