@@ -24,6 +24,34 @@
     }
 
     // ============================================
+    // Hero Slider
+    // ============================================
+    const heroSlider = document.querySelector('.hero-slider');
+    
+    if (heroSlider) {
+        const slides = heroSlider.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        const slideInterval = 5000; // 5 seconds
+        
+        // Set first slide as active
+        if (slides.length > 0) {
+            slides[0].classList.add('active');
+        }
+        
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        // Auto-advance slides
+        if (totalSlides > 1) {
+            setInterval(nextSlide, slideInterval);
+        }
+    }
+
+    // ============================================
     // Mobile Navigation Toggle
     // ============================================
     const navbarToggle = document.getElementById('navbarToggle');
