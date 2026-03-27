@@ -690,8 +690,13 @@ nav {
    ============================================ */
 .portfolio-slider {
     position: relative;
-    overflow: visible;
     margin: 0 70px;
+}
+
+.portfolio-track-viewport {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
 }
 
 .portfolio-slider-wrapper {
@@ -701,13 +706,16 @@ nav {
 
 .portfolio-track {
     display: flex;
+    width: 100%;
     transition: transform 0.5s ease;
-    overflow: hidden;
-    border-radius: 12px;
 }
 
 .portfolio-slide {
     flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
 }
 
 .portfolio-title {
@@ -1480,11 +1488,30 @@ nav {
     .faq-item,
     .process-step,
     .cta-box,
-    .portfolio-grid {
+    .portfolio-grid,
+    .portfolio-slide {
         word-wrap: break-word;
         overflow-wrap: break-word;
         box-sizing: border-box;
         max-width: 100%;
+    }
+
+    /* Portfolio slider mobile fixes */
+    .portfolio-slider {
+        margin: 0 40px;
+    }
+    
+    .portfolio-btn-prev {
+        left: -35px;
+    }
+    
+    .portfolio-btn-next {
+        right: -35px;
+    }
+    
+    .portfolio-slide {
+        width: 100%;
+        min-width: 100%;
     }
 
     /* Fix for process steps */
@@ -1722,6 +1749,29 @@ nav {
 
     .trust-item {
         padding: 15px;
+    }
+
+    .portfolio-slider {
+        margin: 0 30px;
+    }
+    
+    .portfolio-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+    
+    .portfolio-btn-prev {
+        left: -30px;
+    }
+    
+    .portfolio-btn-next {
+        right: -30px;
+    }
+    
+    .portfolio-slide {
+        width: 100%;
+        min-width: 100%;
     }
 
     .process-step:hover {

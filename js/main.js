@@ -142,6 +142,23 @@
         let currentIndex = 0;
         const totalSlides = slides.length;
         
+        // Preload images in all slides to prevent empty slide issues
+        function preloadSlideImages() {
+            slides.forEach((slide, index) => {
+                const images = slide.querySelectorAll('img');
+                images.forEach(img => {
+                    // Force image load by creating a new Image object
+                    if (img.src && !img.complete) {
+                        const preloadImg = new Image();
+                        preloadImg.src = img.src;
+                    }
+                });
+            });
+        }
+        
+        // Run preload after a short delay to not block initial render
+        setTimeout(preloadSlideImages, 100);
+        
         // Create dots
         for (let i = 0; i < totalSlides; i++) {
             const dot = document.createElement('button');
