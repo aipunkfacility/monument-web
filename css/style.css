@@ -3,13 +3,49 @@
    UI/UX Redesign v2.0
    ============================================ */
 
-/* --- CSS Variables (Dark Theme) --- */
 :root {
-    /* Background */
+    /* --- Design Tokens --- */
+
+    /* Spacing (8-point grid) */
+    --space-1: 0.25rem; /* 4px */
+    --space-2: 0.5rem;  /* 8px */
+    --space-3: 0.75rem; /* 12px */
+    --space-4: 1rem;    /* 16px */
+    --space-5: 1.25rem; /* 20px */
+    --space-6: 1.5rem;  /* 24px */
+    --space-8: 2rem;    /* 32px */
+    --space-10: 2.5rem; /* 40px */
+    --space-12: 3rem;   /* 48px */
+    --space-16: 4rem;   /* 64px */
+
+    /* Typography Scale */
+    --text-xs: 0.75rem;   /* 12px */
+    --text-sm: 0.875rem;  /* 14px */
+    --text-base: 1rem;    /* 16px */
+    --text-lg: 1.125rem;  /* 18px */
+    --text-xl: 1.25rem;   /* 20px */
+    --text-2xl: 1.5rem;   /* 24px */
+    --text-3xl: clamp(2rem, 4vw + 1rem, 3rem);     /* Fluid H2 */
+    --text-4xl: clamp(2.5rem, 5vw + 1rem, 4.5rem); /* Fluid H1 */
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+
+    /* Blurs & Effects */
+    --blur-glass: 16px;
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+    
+    /* --- Component Variables (Dark Theme) --- */
+    
+    /* Backgrounds */
+    --bg-primary: #1a1a2e;
     --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     --bg-gradient-hero: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 30%, #16213e 70%, #0f3460 100%);
     
-    /* Text */
+    /* Text Colors */
     --text-color: #e0e0e0;
     --text-muted: #c0c0c0;
     --text-dim: #b0b0b0;
@@ -20,100 +56,68 @@
     --accent-hover: #2980b9;
     --accent-glow: rgba(52, 152, 219, 0.4);
     
-    /* Cards */
-    --card-bg: rgba(255, 255, 255, 0.08);
-    --card-border: rgba(255, 255, 255, 0.15);
-    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    
-    /* Navbar */
+    /* Surface / Glass */
+    --surface-bg: rgba(255, 255, 255, 0.08);
+    --surface-hover: rgba(255, 255, 255, 0.15);
+    --surface-border: rgba(255, 255, 255, 0.15);
     --navbar-bg: rgba(26, 26, 46, 0.8);
     --navbar-border: rgba(255, 255, 255, 0.1);
     
-    /* Sections */
-    --section-bg: transparent;
-    --header-bg: rgba(255, 255, 255, 0.05);
-    --header-border: rgba(255, 255, 255, 0.1);
-    
-    /* Pricing */
-    --pricing-bg: rgba(255, 255, 255, 0.06);
-    --pricing-border: rgba(255, 255, 255, 0.12);
-    --pricing-hover: rgba(255, 255, 255, 0.1);
-    --pricing-featured-bg: rgba(52, 152, 219, 0.15);
+    /* Functional */
+    --pricing-featured: rgba(52, 152, 219, 0.15);
     --pricing-featured-border: rgba(52, 152, 219, 0.4);
-    
-    /* Gallery */
-    --gallery-border: rgba(255, 255, 255, 0.1);
-    
-    /* CTA */
     --cta-bg: rgba(52, 152, 219, 0.15);
-    --cta-section-bg: rgba(52, 152, 219, 0.08);
-    
-    /* Footer */
-    --footer-bg: rgba(255, 255, 255, 0.03);
-    --footer-border: rgba(255, 255, 255, 0.1);
-    --footer-note-color: rgba(255, 255, 255, 0.55);
-    
-    /* Buttons */
-    --btn-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    --btn-primary-bg: rgba(52, 152, 219, 0.8);
-    --btn-primary-hover: rgba(52, 152, 219, 1);
-    
-    /* Theme Toggle */
-    --theme-toggle-bg: rgba(255, 255, 255, 0.1);
-    --theme-toggle-border: rgba(255, 255, 255, 0.2);
+    --btn-primary-bg: #3498db;
+    --btn-primary-hover: #2980b9;
+    --btn-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --theme-toggle-bg: rgba(255, 255, 255, 0.05);
+    --theme-toggle-border: rgba(255, 255, 255, 0.1);
     --theme-toggle-color: #ffffff;
     
-    /* Animations */
+    /* Animation */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
 }
 
-/* --- Light Theme --- */
 [data-theme="light"] {
+    /* --- Component Variables (Light Theme) --- */
+    
+    /* Backgrounds */
+    --bg-primary: #f0f2f5;
     --bg-gradient: linear-gradient(135deg, #f0f2f5 0%, #e4e6eb 50%, #d1d5db 100%);
     --bg-gradient-hero: linear-gradient(135deg, #e4e6eb 0%, #f0f2f5 30%, #e4e6eb 70%, #d1d5db 100%);
     
+    /* Text */
     --text-color: #333333;
     --text-muted: #555555;
     --text-dim: #888888;
     --heading-color: #1a1a2e;
     
+    /* Accent */
     --accent-color: #2980b9;
     --accent-hover: #1f6dad;
     --accent-glow: rgba(52, 152, 219, 0.3);
     
-    --card-bg: rgba(255, 255, 255, 0.7);
-    --card-border: rgba(0, 0, 0, 0.1);
-    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    
-    --navbar-bg: rgba(255, 255, 255, 0.9);
+    /* Surface / Glass */
+    --surface-bg: rgba(255, 255, 255, 0.75);
+    --surface-hover: rgba(255, 255, 255, 0.95);
+    --surface-border: rgba(0, 0, 0, 0.15);
+    --navbar-bg: rgba(255, 255, 255, 0.92);
     --navbar-border: rgba(0, 0, 0, 0.1);
     
-    --header-bg: rgba(255, 255, 255, 0.5);
-    --header-border: rgba(0, 0, 0, 0.08);
-    
-    --pricing-bg: rgba(255, 255, 255, 0.6);
-    --pricing-border: rgba(0, 0, 0, 0.08);
-    --pricing-hover: rgba(255, 255, 255, 0.8);
-    --pricing-featured-bg: rgba(52, 152, 219, 0.12);
+    /* Functional */
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --pricing-featured: rgba(52, 152, 219, 0.12);
     --pricing-featured-border: rgba(52, 152, 219, 0.5);
-    
-    --gallery-border: rgba(0, 0, 0, 0.1);
-    
     --cta-bg: rgba(52, 152, 219, 0.1);
-    --cta-section-bg: rgba(52, 152, 219, 0.05);
-    
-    --footer-bg: rgba(255, 255, 255, 0.4);
-    --footer-border: rgba(0, 0, 0, 0.08);
-    --footer-note-color: rgba(0, 0, 0, 0.55);
-    
-    --btn-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    --btn-primary-bg: rgba(52, 152, 219, 0.9);
-    --btn-primary-hover: rgba(52, 152, 219, 1);
-    
-    --theme-toggle-bg: rgba(0, 0, 0, 0.08);
-    --theme-toggle-border: rgba(0, 0, 0, 0.15);
+    --btn-primary-bg: #2980b9;
+    --btn-primary-hover: #216a9a;
+    --btn-shadow: 0 4px 15px rgba(41, 128, 185, 0.2);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --theme-toggle-bg: #f8f9fa;
+    --theme-toggle-border: rgba(0, 0, 0, 0.1);
     --theme-toggle-color: #333333;
 }
 
@@ -129,16 +133,22 @@ html {
     overflow-x: hidden;
 }
 
+h1 { font-size: var(--text-4xl); line-height: 1.1; margin-bottom: var(--space-4); color: var(--heading-color); }
+h2 { font-size: var(--text-3xl); line-height: 1.2; margin-bottom: var(--space-4); color: var(--heading-color); }
+h3 { font-size: var(--text-2xl); line-height: 1.3; margin-bottom: var(--space-3); color: var(--heading-color); }
+
 h1, h2, h3, h4, h5, h6, .navbar-logo, .navbar-menu li a, .btn, .portfolio-label, .pricing-card h3, .price-value {
     font-family: 'Outfit', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background: var(--bg-gradient);
+    font-size: var(--text-base);
+    background: var(--bg-primary);
+    background-image: var(--bg-gradient);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.55;
     min-height: 100vh;
     overflow-x: hidden;
     word-wrap: break-word;
@@ -193,7 +203,8 @@ nav {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding-left: var(--space-5);
+    padding-right: var(--space-5);
     box-sizing: border-box;
 }
 
@@ -224,24 +235,25 @@ nav {
 .navbar-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding-left: var(--space-5);
+    padding-right: var(--space-5);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70px;
+    height: 72px; /* 9 * 8 */
     position: relative;
 }
 
 .navbar-logo {
     position: absolute;
-    left: 20px;
+    left: var(--space-5);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: var(--space-2);
     text-decoration: none;
     color: var(--heading-color);
-    font-size: 20px;
-    font-weight: 600;
+    font-size: var(--text-xl);
+    font-weight: 700;
     transition: color var(--transition-fast);
 }
 
@@ -257,30 +269,32 @@ nav {
 .navbar-menu {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: var(--space-1);
     list-style: none;
 }
 
 .navbar-menu li a {
     display: block;
-    padding: 10px 16px;
+    padding: var(--space-2) var(--space-4);
     text-decoration: none;
     color: var(--text-muted);
     font-size: 15px;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     transition: all var(--transition-fast);
     white-space: nowrap;
 }
 
 .navbar-menu li a:hover {
     color: var(--heading-color);
-    background: var(--pricing-hover);
+    background: var(--surface-hover);
 }
 
 .navbar-cta {
     background: var(--btn-primary-bg) !important;
     color: #ffffff !important;
-    margin-left: 10px;
+    padding: var(--space-2) var(--space-5) !important;
+    border-radius: var(--radius-sm) !important;
+    font-weight: 700 !important;
 }
 
 .navbar-cta:hover {
@@ -302,7 +316,7 @@ nav {
 }
 
 .navbar-toggle:hover {
-    background: var(--pricing-hover);
+    background: var(--surface-hover);
 }
 
 /* --- Theme Toggle --- */
@@ -326,7 +340,7 @@ nav {
 
 .theme-toggle:hover {
     transform: scale(1.1);
-    background: var(--pricing-hover);
+    background: var(--surface-hover);
 }
 
 .theme-toggle i {
@@ -356,7 +370,7 @@ nav {
     width: 100%;
     margin-top: 10px;
     padding-top: 10px;
-    border-top: 1px solid var(--card-border);
+    border-top: 1px solid var(--surface-border);
 }
 
 /* Desktop theme toggle */
@@ -380,7 +394,8 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 120px 20px 80px 20px;
+    padding: var(--space-16) var(--space-5) var(--space-10) var(--space-5);
+    padding-top: calc(72px + var(--space-12)); /* Navbar height + Hero top padding */
     text-align: left;
     overflow: hidden;
 }
@@ -519,7 +534,7 @@ nav {
    Sections (Common)
    ============================================ */
 .section {
-    padding: 100px 0;
+    padding: var(--space-16) 0;
 }
 
 .section-header {
@@ -562,31 +577,31 @@ nav {
 .advantages-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: var(--space-8);
 }
 
 .advantage-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--card-border);
-    border-radius: 16px;
-    padding: 35px 30px;
+    background: var(--surface-bg);
+    backdrop-filter: blur(var(--blur-glass));
+    -webkit-backdrop-filter: blur(var(--blur-glass));
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8) var(--space-6);
     text-align: center;
     transition: all var(--transition-normal);
 }
 
 .advantage-card:hover {
     transform: translateY(-8px);
-    background: var(--pricing-hover);
+    background: var(--surface-hover);
     box-shadow: 0 15px 45px var(--accent-glow);
     border-color: var(--accent-color);
 }
 
 .advantage-icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 20px;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--space-4);
     background: var(--cta-bg);
     border-radius: 50%;
     display: flex;
@@ -630,11 +645,11 @@ nav {
 
 .process-step {
     display: grid;
-    grid-template-columns: 60px 1fr 80px;
-    gap: 30px;
+    grid-template-columns: 64px 1fr 64px;
+    gap: var(--space-8);
     align-items: center;
-    padding: 30px 0;
-    border-bottom: 1px solid var(--card-border);
+    padding: var(--space-8) 0;
+    border-bottom: 1px solid var(--surface-border);
     transition: all var(--transition-normal);
     max-width: 100%;
     box-sizing: border-box;
@@ -645,7 +660,7 @@ nav {
 }
 
 .process-step:hover {
-    background: var(--card-bg);
+    background: var(--surface-bg);
     border-radius: 12px;
     padding: 30px;
     margin: 0;
@@ -680,8 +695,8 @@ nav {
 .step-icon {
     width: 60px;
     height: 60px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: var(--surface-bg);
+    border: 1px solid var(--surface-border);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -734,12 +749,12 @@ nav {
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: var(--space-6);
 }
 
 .portfolio-item {
     position: relative;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     overflow: hidden;
     border: 1px solid var(--gallery-border);
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
@@ -761,7 +776,7 @@ nav {
     bottom: 0;
     left: 0;
     right: 0;
-    background: var(--card-bg);
+    background: var(--surface-bg);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     padding: 12px;
@@ -777,8 +792,8 @@ nav {
     transform: translateY(-50%);
     width: 44px;
     height: 44px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: var(--surface-bg);
+    border: 1px solid var(--surface-border);
     border-radius: 50%;
     cursor: pointer;
     color: var(--heading-color);
@@ -815,7 +830,7 @@ nav {
 .portfolio-dot {
     width: 10px;
     height: 10px;
-    background: var(--card-border);
+    background: var(--surface-border);
     border-radius: 50%;
     cursor: pointer;
     transition: all var(--transition-fast);
@@ -839,34 +854,25 @@ nav {
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-bottom: 30px;
+    gap: var(--space-8);
+    margin-bottom: var(--space-8);
 }
 
 .pricing-card {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    padding: 40px 30px;
+    background: var(--surface-bg);
+    backdrop-filter: blur(var(--blur-glass));
+    -webkit-backdrop-filter: blur(var(--blur-glass));
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-10) var(--space-8);
     position: relative;
     transition: all var(--transition-normal);
 }
 
-[data-theme="light"] .pricing-card {
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(0, 0, 0, 0.12);
-}
-
 .pricing-card:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.18);
-    box-shadow: var(--card-shadow);
-}
-
-[data-theme="light"] .pricing-card:hover {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--surface-hover);
+    box-shadow: var(--shadow-glass);
 }
 
 .pricing-featured {
@@ -886,10 +892,10 @@ nav {
     transform: translateX(-50%);
     background: var(--accent-color);
     color: #ffffff;
-    padding: 6px 20px;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 600;
+    padding: var(--space-1) var(--space-5);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: 700;
 }
 
 .pricing-header {
@@ -898,15 +904,15 @@ nav {
 }
 
 .pricing-icon {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 15px;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--space-4);
     background: var(--cta-bg);
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
+    font-size: var(--text-3xl);
     color: var(--accent-color);
 }
 
@@ -918,9 +924,9 @@ nav {
 
 .pricing-price {
     text-align: center;
-    margin-bottom: 25px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid var(--card-border);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--surface-border);
 }
 
 .price-value {
@@ -943,9 +949,9 @@ nav {
 .pricing-features li {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 0;
-    font-size: 15px;
+    gap: var(--space-3);
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
     color: var(--text-muted);
 }
 
@@ -958,16 +964,12 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 15px 25px;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 12px;
-    font-size: 15px;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-6);
+    background: var(--surface-bg);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
     color: var(--text-muted);
-}
-
-[data-theme="light"] .pricing-note {
-    background: rgba(255, 255, 255, 0.85);
 }
 
 .pricing-note i {
@@ -992,26 +994,18 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: var(--surface-bg);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-md);
     transition: all var(--transition-fast);
 }
 
-[data-theme="light"] .trust-item {
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(0, 0, 0, 0.12);
-}
-
 .trust-item:hover {
-    background: rgba(255, 255, 255, 0.18);
+    background: var(--surface-hover);
     transform: translateY(-3px);
-}
-
-[data-theme="light"] .trust-item:hover {
-    background: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow-glass);
 }
 
 .trust-item i {
@@ -1039,10 +1033,10 @@ nav {
 }
 
 .faq-item {
-    margin-bottom: 15px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 12px;
+    margin-bottom: var(--space-4);
+    background: var(--surface-bg);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-md);
     overflow: hidden;
     transition: all var(--transition-normal);
 }
@@ -1108,12 +1102,12 @@ nav {
 }
 
 .cta-box {
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--card-border);
-    border-radius: 24px;
-    padding: 60px 40px;
+    background: var(--surface-bg);
+    backdrop-filter: blur(var(--blur-glass));
+    -webkit-backdrop-filter: blur(var(--blur-glass));
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-12) var(--space-8);
     text-align: center;
 }
 
@@ -1140,7 +1134,7 @@ nav {
 
 .cta-contact {
     padding-top: 20px;
-    border-top: 1px solid var(--card-border);
+    border-top: 1px solid var(--surface-border);
 }
 
 .cta-contact p {
@@ -1176,14 +1170,14 @@ nav {
 .footer {
     background: var(--footer-bg);
     border-top: 1px solid var(--footer-border);
-    padding: 60px 0 30px;
+    padding: var(--space-16) 0 var(--space-8);
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    margin-bottom: 40px;
+    gap: var(--space-16);
+    margin-bottom: var(--space-10);
 }
 
 .footer-logo {
@@ -1265,12 +1259,12 @@ nav {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 14px 28px;
-    border-radius: 10px;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-md);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: var(--text-base);
     transition: all var(--transition-fast);
     border: 1px solid transparent;
     cursor: pointer;
@@ -1298,13 +1292,13 @@ nav {
 
 .btn-outline {
     background: transparent;
-    border: 1px solid var(--card-border);
-    color: var(--heading-color);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
 }
 
 .btn-outline:hover {
-    background: var(--card-bg);
-    color: var(--heading-color);
+    background: var(--accent-color);
+    color: #ffffff;
 }
 
 .btn-telegram {
@@ -1414,10 +1408,10 @@ nav {
         top: -100%;
         left: 0;
         right: 0;
-        background: rgba(255, 255, 255, 0.99);
+        background: var(--bg-primary);
         flex-direction: column;
-        padding: 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: var(--space-5);
+        border-bottom: 1px solid var(--surface-border);
         opacity: 0;
         visibility: hidden;
         transition: top 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
@@ -1430,7 +1424,7 @@ nav {
     }
     
     .navbar-menu.active {
-        top: 70px;
+        top: 72px;
         opacity: 1;
         visibility: visible;
     }
@@ -1454,6 +1448,8 @@ nav {
         display: flex;
         align-items: center;
         justify-content: center;
+        position: absolute;
+        right: var(--space-5);
     }
 
     .theme-toggle-desktop {
@@ -1472,12 +1468,13 @@ nav {
 
 @media (max-width: 768px) {
     .section {
-        padding: 70px 0;
+        padding: var(--space-12) 0;
     }
 
     .container {
         width: 100%;
-        padding: 0 16px;
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
         box-sizing: border-box;
         max-width: 100%;
         overflow-x: hidden;

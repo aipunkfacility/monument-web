@@ -30,7 +30,8 @@ monument-web/
 │   └── email.html          # Email-шаблон для рассылки
 ├── .gitignore              # Игнорируемые файлы
 ├── README.md               # Документация проекта
-└── AGENTS.md               # Это руководство
+├── AGENTS.md               # Это руководство
+└── DESIGN_SYSTEM.md        # Описание дизайн-системы (v2.0)
 ```
 
 Дизайн: **Glassmorphism** (тёмный фон, стеклянные карточки) + **светлая тема**.
@@ -57,18 +58,16 @@ monument-web/
 - Стили подключаются через `<link rel="stylesheet" href="css/style.css">`
 - JavaScript подключается через `<script src="js/*.js" defer></script>`
 
-### CSS - Glassmorphism + Темы
+### CSS - Glassmorphism v2.0 + Дизайн-система
 
-- Фон: тёмный градиент `#1a1a2e → #0f3460`
-- Карточки: `backdrop-filter: blur()`, полупрозрачные `rgba(255,255,255,0.08)`
-- Границы: `1px solid rgba(255,255,255,0.15)`
-- Светлый текст, 4-пробельная indentation
-- Flexbox и Grid для вёрстки
-- Media queries для мобильных (600px breakpoint)
-- Все стили в `css/style.css`, не в `<style>` тегах
-- **CSS переменные** для тем (`:root` и `[data-theme="light"]`)
-- **Переключатель тем** в header (кнопка с иконкой)
-- **Fallback** для старых браузеров без backdrop-filter (`@supports`)
+- **Сетка:** Строго 8-пиксельная сетка через токены `--space-1` — `--space-16`.
+- **Типографика:** Fluid Typography через `clamp()`. Текст — Inter, заголовки — Outfit.
+- **Эффекты:** `backdrop-filter: blur(var(--blur-glass))`, семантические переменные `--surface-bg` и `--surface-border`.
+- **Тени:** Системные переменные `--shadow-glass` и `--card-shadow`.
+- **Радиусы:** Унифицированные `--radius-sm`, `--radius-md`, `--radius-lg`.
+- **Темы:** Поддержка `:root` (Dark) и `[data-theme="light"]`.
+- Все стили в `css/style.css`, не в `<style>` тегах.
+- **Важно:** Любые новые отступы/размеры должны использовать системные токены.
 
 ### JavaScript
 
@@ -126,8 +125,9 @@ monument-web/
 4. Следуйте glassmorphism стилю (blur, transparency, тёмный фон)
 5. Стили — только в `css/style.css`
 6. JavaScript — только в `js/`
-7. При добавлении новых цветов — используйте CSS переменные
-8. Обновляйте README.md и AGENTS.md при изменении структуры
+7. При добавлении новых цветов — используйте CSS переменные.
+8. **Обязательно** следуйте токенам из [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md).
+9. Обновляйте README.md, AGENTS.md и DESIGN_SYSTEM.md при изменении системных параметров.
 
 ---
 
@@ -142,6 +142,7 @@ monument-web/
 - [x] Выбор темы сохраняется в localStorage
 - [x] Lazy loading для изображений
 - [x] WebP формат
+- [x] Дизайн-система (8-point grid, fluid typography) внедрена
 
 ---
 
