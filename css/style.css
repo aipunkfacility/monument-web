@@ -7,26 +7,44 @@
     /* --- Design Tokens --- */
 
     /* Spacing (8-point grid) */
-    --space-1: 0.25rem; /* 4px */
-    --space-2: 0.5rem;  /* 8px */
-    --space-3: 0.75rem; /* 12px */
-    --space-4: 1rem;    /* 16px */
-    --space-5: 1.25rem; /* 20px */
-    --space-6: 1.5rem;  /* 24px */
-    --space-8: 2rem;    /* 32px */
-    --space-10: 2.5rem; /* 40px */
-    --space-12: 3rem;   /* 48px */
-    --space-16: 4rem;   /* 64px */
+    --space-1: 0.25rem;
+    /* 4px */
+    --space-2: 0.5rem;
+    /* 8px */
+    --space-3: 0.75rem;
+    /* 12px */
+    --space-4: 1rem;
+    /* 16px */
+    --space-5: 1.25rem;
+    /* 20px */
+    --space-6: 1.5rem;
+    /* 24px */
+    --space-8: 2rem;
+    /* 32px */
+    --space-10: 2.5rem;
+    /* 40px */
+    --space-12: 3rem;
+    /* 48px */
+    --space-16: 4rem;
+    /* 64px */
 
     /* Typography Scale */
-    --text-xs: 0.75rem;   /* 12px */
-    --text-sm: 0.875rem;  /* 14px */
-    --text-base: 1rem;    /* 16px */
-    --text-lg: 1.125rem;  /* 18px */
-    --text-xl: 1.25rem;   /* 20px */
-    --text-2xl: 1.5rem;   /* 24px */
-    --text-3xl: clamp(2rem, 4vw + 1rem, 3rem);     /* Fluid H2 */
-    --text-4xl: clamp(2.5rem, 5vw + 1rem, 4.5rem); /* Fluid H1 */
+    --text-xs: 0.75rem;
+    /* 12px */
+    --text-sm: 0.875rem;
+    /* 14px */
+    --text-base: 1rem;
+    /* 16px */
+    --text-lg: 1.125rem;
+    /* 18px */
+    --text-xl: 1.25rem;
+    /* 20px */
+    --text-2xl: 1.5rem;
+    /* 24px */
+    --text-3xl: clamp(2rem, 4vw + 1rem, 3rem);
+    /* Fluid H2 */
+    --text-4xl: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+    /* Fluid H1 */
 
     /* Border Radius */
     --radius-sm: 8px;
@@ -37,34 +55,34 @@
     /* Blurs & Effects */
     --blur-glass: 16px;
     --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
-    
+
     /* --- Component Variables (Dark Theme) --- */
-    
+
     /* Backgrounds */
     --bg-primary: #1a1a2e;
     --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     --bg-gradient-hero: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 30%, #16213e 70%, #0f3460 100%);
-    
+
     /* Text Colors */
     --text-color: #e0e0e0;
     --text-muted: #c0c0c0;
     --text-dim: #b0b0b0;
     --heading-color: #ffffff;
-    
+
     /* Accent */
     --accent-color: #3498db;
     --accent-hover: #2980b9;
     --accent-glow: rgba(52, 152, 219, 0.4);
-    
+
     /* Surface / Glass */
     --surface-bg: rgba(255, 255, 255, 0.08);
     --surface-hover: rgba(255, 255, 255, 0.15);
     --surface-border: rgba(255, 255, 255, 0.15);
     --navbar-bg: rgba(26, 26, 46, 0.8);
     --navbar-border: rgba(255, 255, 255, 0.1);
-    
+
     /* Functional */
-    --pricing-featured: rgba(52, 152, 219, 0.15);
+    --pricing-featured-bg: rgba(52, 152, 219, 0.15);
     --pricing-featured-border: rgba(52, 152, 219, 0.4);
     --cta-bg: rgba(52, 152, 219, 0.15);
     --btn-primary-bg: #3498db;
@@ -74,7 +92,7 @@
     --theme-toggle-bg: rgba(255, 255, 255, 0.05);
     --theme-toggle-border: rgba(255, 255, 255, 0.1);
     --theme-toggle-color: #ffffff;
-    
+
     /* Animation */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
@@ -83,34 +101,34 @@
 
 [data-theme="light"] {
     /* --- Component Variables (Light Theme) --- */
-    
+
     /* Backgrounds */
     --bg-primary: #f0f2f5;
     --bg-gradient: linear-gradient(135deg, #f0f2f5 0%, #e4e6eb 50%, #d1d5db 100%);
     --bg-gradient-hero: linear-gradient(135deg, #e4e6eb 0%, #f0f2f5 30%, #e4e6eb 70%, #d1d5db 100%);
-    
+
     /* Text */
     --text-color: #333333;
     --text-muted: #555555;
     --text-dim: #888888;
     --heading-color: #1a1a2e;
-    
+
     /* Accent */
     --accent-color: #2980b9;
     --accent-hover: #1f6dad;
     --accent-glow: rgba(52, 152, 219, 0.3);
-    
+
     /* Surface / Glass */
     --surface-bg: rgba(255, 255, 255, 0.75);
     --surface-hover: rgba(255, 255, 255, 0.95);
     --surface-border: rgba(0, 0, 0, 0.15);
     --navbar-bg: rgba(255, 255, 255, 0.92);
     --navbar-border: rgba(0, 0, 0, 0.1);
-    
+
     /* Functional */
     --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.08);
-    --pricing-featured: rgba(52, 152, 219, 0.12);
-    --pricing-featured-border: rgba(52, 152, 219, 0.5);
+    --pricing-featured-bg: rgba(255, 255, 255, 0.85);
+    --pricing-featured-border: var(--accent-color);
     --cta-bg: rgba(52, 152, 219, 0.1);
     --btn-primary-bg: #2980b9;
     --btn-primary-hover: #216a9a;
@@ -133,11 +151,39 @@ html {
     overflow-x: hidden;
 }
 
-h1 { font-size: var(--text-4xl); line-height: 1.1; margin-bottom: var(--space-4); color: var(--heading-color); }
-h2 { font-size: var(--text-3xl); line-height: 1.2; margin-bottom: var(--space-4); color: var(--heading-color); }
-h3 { font-size: var(--text-2xl); line-height: 1.3; margin-bottom: var(--space-3); color: var(--heading-color); }
+h1 {
+    font-size: var(--text-4xl);
+    line-height: 1.1;
+    margin-bottom: var(--space-4);
+    color: var(--heading-color);
+}
 
-h1, h2, h3, h4, h5, h6, .navbar-logo, .navbar-menu li a, .btn, .portfolio-label, .pricing-card h3, .price-value {
+h2 {
+    font-size: var(--text-3xl);
+    line-height: 1.2;
+    margin-bottom: var(--space-4);
+    color: var(--heading-color);
+}
+
+h3 {
+    font-size: var(--text-2xl);
+    line-height: 1.3;
+    margin-bottom: var(--space-3);
+    color: var(--heading-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-logo,
+.navbar-menu li a,
+.btn,
+.portfolio-label,
+.pricing-card h3,
+.price-value {
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
 }
@@ -240,7 +286,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 72px; /* 9 * 8 */
+    height: 72px;
+    /* 9 * 8 */
     position: relative;
 }
 
@@ -395,7 +442,8 @@ nav {
     align-items: flex-start;
     justify-content: center;
     padding: var(--space-16) var(--space-5) var(--space-10) var(--space-5);
-    padding-top: calc(72px + var(--space-12)); /* Navbar height + Hero top padding */
+    padding-top: calc(72px + var(--space-12));
+    /* Navbar height + Hero top padding */
     text-align: left;
     overflow: hidden;
 }
@@ -446,13 +494,11 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.85) 0%,
-        rgba(0, 0, 0, 0.6) 25%,
-        rgba(0, 0, 0, 0.4) 40%,
-        rgba(0, 0, 0, 0) 50%
-    );
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.6) 25%,
+            rgba(0, 0, 0, 0.4) 40%,
+            rgba(0, 0, 0, 0) 50%);
     z-index: 1;
 }
 
@@ -524,6 +570,7 @@ nav {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -866,7 +913,8 @@ nav {
     border-radius: var(--radius-lg);
     padding: var(--space-10) var(--space-8);
     position: relative;
-    transition: all var(--transition-normal);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease, background 0.2s ease;
+    will-change: transform, box-shadow;
 }
 
 .pricing-card:hover {
@@ -875,14 +923,20 @@ nav {
     box-shadow: var(--shadow-glass);
 }
 
-.pricing-featured {
+.pricing-card.pricing-featured {
     background: var(--pricing-featured-bg);
-    border-color: var(--pricing-featured-border);
+    border: 2px solid var(--pricing-featured-border);
     transform: scale(1.05);
+    box-shadow: 0 15px 45px var(--accent-glow);
+    z-index: 10;
 }
 
-.pricing-featured:hover {
-    transform: scale(1.05) translateY(-5px);
+.pricing-card.pricing-featured:hover {
+    transform: scale(1.1) translateY(-10px);
+    background: var(--pricing-featured-bg);
+    border-color: var(--accent-hover);
+    box-shadow: 0 25px 60px var(--accent-glow);
+    z-index: 11;
 }
 
 .pricing-badge {
@@ -1380,23 +1434,23 @@ nav {
     .advantages-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .pricing-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .pricing-featured {
         transform: none;
     }
-    
+
     .pricing-featured:hover {
         transform: translateY(-5px);
     }
-    
+
     .trust-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1417,28 +1471,28 @@ nav {
         transition: top 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
         z-index: 10000;
     }
-    
+
     [data-theme="dark"] .navbar-menu {
         background: rgba(26, 26, 46, 0.99);
         border-bottom: 1px solid var(--navbar-border);
     }
-    
+
     .navbar-menu.active {
         top: 72px;
         opacity: 1;
         visibility: visible;
     }
-    
+
     .navbar-menu li {
         width: 100%;
     }
-    
+
     .navbar-menu li a {
         display: block;
         width: 100%;
         text-align: center;
     }
-    
+
     .navbar-cta {
         margin-left: 0;
         margin-top: 10px;
@@ -1503,15 +1557,15 @@ nav {
     .portfolio-slider {
         margin: 0 40px;
     }
-    
+
     .portfolio-btn-prev {
         left: -35px;
     }
-    
+
     .portfolio-btn-next {
         right: -35px;
     }
-    
+
     .portfolio-slide {
         width: 100%;
         min-width: 100%;
@@ -1580,23 +1634,19 @@ nav {
         right: 0;
         bottom: 0;
         height: 60%;
-        background: linear-gradient(
-            to bottom,
-            transparent 0%,
-            rgba(0, 0, 0, 0.3) 10%,
-            rgba(0, 0, 0, 0.7) 40%,
-            rgba(0, 0, 0, 0.95) 100%
-        );
+        background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(0, 0, 0, 0.3) 10%,
+                rgba(0, 0, 0, 0.7) 40%,
+                rgba(0, 0, 0, 0.95) 100%);
     }
 
     [data-theme="light"] .hero-bg::after {
-        background: linear-gradient(
-            to bottom,
-            transparent 0%,
-            rgba(255, 255, 255, 0.3) 10%,
-            rgba(255, 255, 255, 0.7) 40%,
-            rgba(255, 255, 255, 0.98) 100%
-        );
+        background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(255, 255, 255, 0.3) 10%,
+                rgba(255, 255, 255, 0.7) 40%,
+                rgba(255, 255, 255, 0.98) 100%);
     }
 
     .hero-content {
@@ -1637,17 +1687,17 @@ nav {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
 
-    
+
+
     .pricing-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .trust-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .portfolio-grid {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -1757,21 +1807,21 @@ nav {
     .portfolio-slider {
         margin: 0 30px;
     }
-    
+
     .portfolio-btn {
         width: 36px;
         height: 36px;
         font-size: 18px;
     }
-    
+
     .portfolio-btn-prev {
         left: -30px;
     }
-    
+
     .portfolio-btn-next {
         right: -30px;
     }
-    
+
     .portfolio-slide {
         width: 100%;
         min-width: 100%;
@@ -1793,7 +1843,7 @@ nav {
         height: 50px;
         font-size: 20px;
     }
-    
+
     .scroll-top {
         bottom: 20px;
         right: 20px;
@@ -1894,35 +1944,35 @@ nav {
     .navbar {
         background: rgba(26, 26, 46, 0.95);
     }
-    
+
     .advantage-card,
     .pricing-card,
     .faq-item,
     .cta-box {
         background: rgba(26, 26, 46, 0.9);
     }
-    
+
     .theme-toggle {
         background: rgba(26, 26, 46, 0.8);
     }
-    
+
     [data-theme="light"] .navbar {
         background: rgba(255, 255, 255, 0.95);
     }
-    
+
     @media (max-width: 900px) {
         [data-theme="light"] .navbar-menu {
             background: rgba(255, 255, 255, 0.98);
         }
     }
-    
+
     [data-theme="light"] .advantage-card,
     [data-theme="light"] .pricing-card,
     [data-theme="light"] .faq-item,
     [data-theme="light"] .cta-box {
         background: rgba(255, 255, 255, 0.9);
     }
-    
+
     [data-theme="light"] .theme-toggle {
         background: rgba(255, 255, 255, 0.8);
     }
@@ -1983,6 +2033,7 @@ nav {
    Reduced Motion (Accessibility)
    ============================================ */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -1991,15 +2042,15 @@ nav {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-    
+
     .hero-bg::before {
         animation: none;
     }
-    
+
     .hero-scroll {
         animation: none;
     }
-    
+
     .hero-badge,
     .hero-title,
     .hero-subtitle,
