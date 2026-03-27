@@ -8,19 +8,29 @@
 
 ```
 monument-web/
-├── index.html          # Основная страница (лендинг)
+├── index.html              # Основная страница (лендинг)
 ├── css/
-│   └── style.css       # Все стили (glassmorphism + темы)
+│   └── style.css           # Все стили (glassmorphism + темы)
 ├── js/
-│   └── theme.js        # JavaScript для переключения тем
+│   ├── theme.js            # JavaScript для переключения тем
+│   └── main.js             # Основной JavaScript (слайдер, мобильное меню)
 ├── img/
-│   ├── favicon.svg     # Favicon
-│   ├── male.webp       # Пример ретуши (мужской портрет)
-│   └── female.webp     # Пример ретуши (женский портрет)
+│   ├── favicon.svg         # Favicon
+│   ├── hero-desktop/       # Слайдер для десктопа (4 изображения)
+│   ├── hero-m.webp         # Изображение для мобильного
+│   ├── male.webp           # Пример ретуши (мужской портрет)
+│   ├── female.webp         # Пример ретуши (женский портрет)
+│   ├── man_original.webp   # Мужской портрет - оригинал
+│   ├── man_retouch.webp    # Мужской портрет - ретушь
+│   ├── man_stone.webp      # Мужской портрет - на камне
+│   ├── woman_original.webp # Женский портрет - оригинал
+│   ├── woman_retouch.webp  # Женский портрет - ретушь
+│   └── woman_stone.webp    # Женский портрет - на камне
 ├── email/
-│   └── email.html      # Email-шаблон для рассылки
-├── README.md           # Документация проекта
-└── AGENTS.md           # Это руководство
+│   └── email.html          # Email-шаблон для рассылки
+├── .gitignore              # Игнорируемые файлы
+├── README.md               # Документация проекта
+└── AGENTS.md               # Это руководство
 ```
 
 Дизайн: **Glassmorphism** (тёмный фон, стеклянные карточки) + **светлая тема**.
@@ -45,7 +55,7 @@ monument-web/
 - UTF-8 и viewport meta
 - Alt текст для изображений
 - Стили подключаются через `<link rel="stylesheet" href="css/style.css">`
-- JavaScript подключается через `<script src="js/theme.js" defer></script>`
+- JavaScript подключается через `<script src="js/*.js" defer></script>`
 
 ### CSS - Glassmorphism + Темы
 
@@ -62,14 +72,13 @@ monument-web/
 
 ### JavaScript
 
-- Минимальный код для переключения тем
-- Сохранение выбора в `localStorage`
-- Обновление иконки кнопки
-- Используй IIFE (immediately invoked function expression) для изоляции
+- `js/theme.js` — переключение тем с сохранением в localStorage
+- `js/main.js` — слайдер в hero, мобильное меню,FAQ-аккордеон
+- Используй IIFE для изоляции
 
 ### Иконки
 
-- Remix Icon через CDN (`ri-sun-line`, `ri-moon-line`)
+- Remix Icon через CDN (`ri-sun-line`, `ri-moon-line`, `ri-menu-line`)
 - Подключение: `<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">`
 - Preconnect для CDN: `<link rel="preconnect" href="https://cdn.jsdelivr.net">`
 
@@ -87,14 +96,25 @@ monument-web/
 ### Изображения
 
 - Локальные файлы в `img/`
-- Формат WebP с fallback на JPG
+- Формат WebP
 - Всегда `alt` атрибут
 - Lazy loading: `loading="lazy"`
-- Используй `<picture>` для WebP с fallback
 
 ### Безопасность
 
 - Все внешние ссылки с `target="_blank"` должны иметь `rel="noopener noreferrer"`
+
+---
+
+## Секции сайта
+
+1. **Hero** — слайдер с 4 изображениями, заголовок, CTA-кнопки
+2. **Преимущества** — 6 карточек с иконками
+3. **Как это работает** — 4 шага процесса
+4. **Портфолио** — 2 вкладки (мужские/женские работы), 3 колонки (оригинал/ретушь/камень)
+5. **Цены** — таблица с услугами и ценами
+6. **FAQ** — аккордеон с вопросами
+7. **Контакты** — Telegram, WhatsApp, Email
 
 ---
 
@@ -107,6 +127,7 @@ monument-web/
 5. Стили — только в `css/style.css`
 6. JavaScript — только в `js/`
 7. При добавлении новых цветов — используйте CSS переменные
+8. Обновляйте README.md и AGENTS.md при изменении структуры
 
 ---
 
@@ -118,9 +139,9 @@ monument-web/
 - [x] Изображения загружаются
 - [x] Glassmorphism эффекты работают (blur)
 - [x] Переключатель тем работает
-- [x] Выбор темы сохраняется
+- [x] Выбор темы сохраняется в localStorage
 - [x] Lazy loading для изображений
-- [x] WebP формат с fallback
+- [x] WebP формат
 
 ---
 
@@ -134,7 +155,9 @@ monument-web/
 
 ## Примечания
 
-- Простой статический сайт - без сборки
+- Простой статический сайт — без сборки
 - Чистый HTML + CSS + JavaScript
 - Поддержка тёмной и светлой темы
-- Email шаблон включает HTML и plain-text версию
+- Hero-слайдер на десктопе, статичное изображение на мобильном
+- Портфолио с вкладками (мужские/женские работы)
+- Галерея: 3 колонки (оригинал → ретушь → результат на камне)
