@@ -89,7 +89,7 @@
     let lastScroll = 0;
 
     function handleScroll() {
-        const currentScroll = window.pageYOffset;
+        const currentScroll = window.scrollY;
         
         if (currentScroll > 100) {
             navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.2)';
@@ -247,7 +247,7 @@
 
     if (scrollTopBtn) {
         function toggleScrollTop() {
-            if (window.pageYOffset > 500) {
+            if (window.scrollY > 500) {
                 scrollTopBtn.classList.add('visible');
             } else {
                 scrollTopBtn.classList.remove('visible');
@@ -281,7 +281,7 @@
                 e.preventDefault();
                 
                 const navbarHeight = navbar.offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                const targetPosition = target.getBoundingClientRect().top + window.scrollY;
                 const offsetPosition = targetPosition - navbarHeight - 20;
                 
                 window.scrollTo({

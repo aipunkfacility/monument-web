@@ -129,8 +129,13 @@ html {
     overflow-x: hidden;
 }
 
+h1, h2, h3, h4, h5, h6, .navbar-logo, .navbar-menu li a, .btn, .portfolio-label, .pricing-card h3, .price-value {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+}
+
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background: var(--bg-gradient);
     color: var(--text-color);
     line-height: 1.6;
@@ -572,9 +577,10 @@ nav {
 }
 
 .advantage-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     background: var(--pricing-hover);
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 15px 45px var(--accent-glow);
+    border-color: var(--accent-color);
 }
 
 .advantage-icon {
