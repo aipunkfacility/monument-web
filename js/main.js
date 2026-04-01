@@ -347,5 +347,119 @@
     window.addEventListener('scroll', throttle(updateActiveLink, 100));
     updateActiveLink();
 
+    // ============================================
+    // Yandex.Metrica — Event Tracking
+    // ============================================
+    /**
+     * Отправка события в Яндекс.Метрику
+     * Безопасно вызывается даже если Метрика не загружена
+     * @param {string} targetName — имя цели (без пробелов, до 50 символов)
+     */
+    function ymReach(targetName) {
+        if (typeof ym === 'function') {
+            ym(108345194, 'reachGoal', targetName);
+        }
+    }
+
+    // --- Hero CTA: «Получить бесплатный тест» ---
+    const heroCtaTest = document.querySelector('.hero-cta .btn-primary');
+    if (heroCtaTest) {
+        heroCtaTest.addEventListener('click', () => {
+            ymReach('hero_cta_test');
+        });
+    }
+
+    // --- Hero CTA: «Смотреть работы» ---
+    const heroCtaPortfolio = document.querySelector('.hero-cta .btn-outline');
+    if (heroCtaPortfolio) {
+        heroCtaPortfolio.addEventListener('click', () => {
+            ymReach('hero_cta_portfolio');
+        });
+    }
+
+    // --- Кнопки в секции цен ---
+    document.querySelectorAll('.pricing-card a[href="#contact"]').forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            const label = i === 0 ? 'portrait' : 'montage';
+            ymReach('pricing_cta_' + label);
+        });
+    });
+
+    // Кнопка «Обсудить» в карточке «Для мастерских»
+    const pricingPartners = document.querySelector('.pricing-featured .btn-primary');
+    if (pricingPartners) {
+        pricingPartners.addEventListener('click', () => {
+            ymReach('pricing_cta_partners');
+        });
+    }
+
+    // --- Контакты: Telegram ---
+    document.querySelectorAll('.btn-telegram').forEach(btn => {
+        btn.addEventListener('click', () => {
+            ymReach('click_telegram');
+        });
+    });
+
+    // --- Контакты: WhatsApp ---
+    document.querySelectorAll('.btn-whatsapp').forEach(btn => {
+        btn.addEventListener('click', () => {
+            ymReach('click_whatsapp');
+        });
+    });
+
+    // --- Контакты: Email ---
+    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+        link.addEventListener('click', () => {
+            ymReach('click_email');
+        });
+    });
+
+    // --- FAQ: раскрытие вопроса ---
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            ymReach('faq_open');
+        });
+    });
+
+    // --- Навигация: клик по ссылке в меню ---
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            ymReach('nav_click');
+        });
+    });
+
+    // --- Футер: клик по ссылкам ---
+    document.querySelectorAll('.footer-links a[href^="#"]').forEach(link => {
+        link.addEventListener('click', () => {
+            ymReach('footer_nav_click');
+        });
+    });
+
+    // --- Кнопка «Наверх» ---
+    if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', () => {
+            ymReach('scroll_to_top');
+        });
+    }
+
+    // --- Досcroll до секции: отслеживание просмотра ключевых секций ---
+    const scrollGoals = document.querySelectorAll('#contact, #portfolio, #pricing');
+    const scrollGoalObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const goalMap = {
+                    '#contact': 'scroll_to_contact',
+                    '#portfolio': 'scroll_to_portfolio',
+                    '#pricing': 'scroll_to_pricing'
+                };
+                ymReach(goalMap['#' + entry.target.id]);
+                scrollGoalObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    scrollGoals.forEach(el => scrollGoalObserver.observe(el));
+
 })();
-// cache bust 1774539094
+// cache bust 1774539095
