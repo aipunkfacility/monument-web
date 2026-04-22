@@ -93,6 +93,11 @@
     --theme-toggle-border: rgba(255, 255, 255, 0.1);
     --theme-toggle-color: #ffffff;
 
+    /* Footer */
+    --footer-bg: rgba(10, 10, 20, 0.6);
+    --footer-border: rgba(255, 255, 255, 0.1);
+    --footer-note-color: #888888;
+
     /* Animation */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
@@ -130,6 +135,11 @@
     --pricing-featured-bg: rgba(255, 255, 255, 0.85);
     --pricing-featured-border: var(--accent-color);
     --cta-bg: rgba(52, 152, 219, 0.1);
+
+    /* Footer */
+    --footer-bg: rgba(255, 255, 255, 0.6);
+    --footer-border: rgba(0, 0, 0, 0.1);
+    --footer-note-color: #666666;
     --btn-primary-bg: #2980b9;
     --btn-primary-hover: #216a9a;
     --btn-shadow: 0 4px 15px rgba(41, 128, 185, 0.2);
@@ -1014,6 +1024,26 @@ nav {
     font-size: 18px;
 }
 
+.pricing-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    padding: var(--space-5) var(--space-6);
+    background: var(--cta-bg);
+    border: 1px solid var(--accent-color);
+    border-radius: var(--radius-md);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-top: var(--space-8);
+}
+
+.pricing-banner i {
+    font-size: 24px;
+    color: var(--accent-color);
+}
+
 .pricing-note {
     display: flex;
     align-items: center;
@@ -1224,25 +1254,21 @@ nav {
 .footer {
     background: var(--footer-bg);
     border-top: 1px solid var(--footer-border);
-    padding: var(--space-16) 0 var(--space-8);
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-16);
-    margin-bottom: var(--space-10);
+    padding: var(--space-10) 0 var(--space-6);
+    text-align: center;
 }
 
 .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
     text-decoration: none;
     color: var(--heading-color);
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: var(--space-6);
 }
 
 .footer-logo i {
@@ -1250,60 +1276,62 @@ nav {
     color: var(--accent-color);
 }
 
-.footer-brand p {
-    font-size: 15px;
+.footer-tagline {
+    font-size: 14px;
+    font-weight: 400;
     color: var(--text-muted);
-    margin: 0;
 }
 
-.footer-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+.footer-tagline::before {
+    content: "— ";
+    opacity: 0.5;
 }
 
-.footer-col h4 {
-    font-size: 16px;
-    color: var(--heading-color);
-    margin-bottom: 20px;
-}
-
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 12px;
-}
-
-.footer-col ul li a {
+.footer-contacts {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
-    text-decoration: none;
+    justify-content: center;
+    gap: 6px 4px;
     font-size: 15px;
+    margin-bottom: var(--space-6);
+}
+
+.footer-contacts a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
     color: var(--text-muted);
     transition: color var(--transition-fast);
 }
 
-.footer-col ul li a:hover {
+.footer-contacts a:hover {
     color: var(--accent-color);
 }
 
-.footer-col ul li a i {
+.footer-contacts a i {
     font-size: 18px;
 }
 
+.footer-sep {
+    color: var(--text-muted);
+    opacity: 0.4;
+}
+
 .footer-bottom {
-    padding-top: 30px;
+    padding-top: var(--space-6);
     border-top: 1px solid var(--footer-border);
-    text-align: center;
 }
 
 .footer-bottom p {
     font-size: 14px;
     color: var(--footer-note-color);
-    margin: 0;
+    margin: 0 0 4px;
+}
+
+.footer-bottom p:last-child {
+    margin-bottom: 0;
 }
 
 .footer-bottom a {
@@ -1524,10 +1552,6 @@ nav {
         display: flex;
     }
 
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -1734,11 +1758,7 @@ nav {
         flex-direction: column;
         align-items: stretch;
     }
-
-    .footer-links {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
+}
 
     /* Solid card backgrounds on mobile */
     .pricing-card,
