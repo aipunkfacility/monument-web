@@ -1,6 +1,6 @@
 /* ============================================
-   RetouchGrav - Granite Design System
-   Design System v3.0
+   Monument Web - Glassmorphism Design
+   UI/UX Redesign v2.0
    ============================================ */
 
 :root {
@@ -52,154 +52,101 @@
     --radius-lg: 20px;
     --radius-full: 9999px;
 
-    /* Shadows */
+    /* Blurs & Effects */
+    --blur-glass: 16px;
     --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
 
-    /* --- Semantic Colors (Mineral Palette — from Granite CRM) --- */
-    --color-primary: #7C8CF8;
-    --color-primary-hover: #6B7BE5;
-    --color-success: #34D399;
-    --color-warning: #FBBF24;
-    --color-destructive: #F43F5E;
-    --color-info: #60A5FA;
-    --color-accent: #C084FC;
-    --focus-ring: 0 0 0 3px rgba(124, 140, 248, 0.3);
+    /* --- Component Variables (Dark Theme) --- */
 
-    /* --- Component Variables (Dark Theme — Granite Palette) --- */
+    /* Backgrounds */
+    --bg-primary: #1a1a2e;
+    --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    --bg-gradient-hero: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 30%, #16213e 70%, #0f3460 100%);
 
-    /* Backgrounds (from Granite CRM reference) */
-    --bg-primary: #3D3F45;
-    --bg-gradient: linear-gradient(135deg, #3D3F45 0%, #2A2C32 50%, #3D3F45 100%);
-    --bg-gradient-hero: linear-gradient(135deg, #3D3F45 0%, #2A2C32 30%, #1A1B20 70%, #2A2C32 100%);
-
-    /* Text Colors (Quartz scale) */
-    --text-color: #E4E5E9;
-    --text-muted: #B0B3BA;
-    --text-dim: #9DA1A9;
-    --heading-color: #E4E5E9;
+    /* Text Colors */
+    --text-color: #e0e0e0;
+    --text-muted: #c0c0c0;
+    --text-dim: #b0b0b0;
+    --heading-color: #ffffff;
 
     /* Accent */
-    --accent-color: #7C8CF8;
-    --accent-hover: #6B7BE5;
-    --accent-glow: rgba(124, 140, 248, 0.4);
+    --accent-color: #3498db;
+    --accent-hover: #2980b9;
+    --accent-glow: rgba(52, 152, 219, 0.4);
 
-    /* Semantic BG tints */
-    --success-bg: rgba(52, 211, 153, 0.12);
-    --warning-bg: rgba(251, 191, 36, 0.12);
-    --destructive-bg: rgba(244, 63, 94, 0.12);
-    --info-bg: rgba(96, 165, 250, 0.12);
-
-    /* Surface (Granite palette) */
-    --surface-bg: #484A50;
-    --surface-hover: #565860;
-    --surface-border: #565860;
-    --navbar-bg: rgba(42, 44, 50, 0.85);
-    --navbar-border: #565860;
-
-    /* Section backgrounds */
-    --section-bg: #484A50;
-    --cta-section-bg: #484A50;
-    --gallery-border: #565860;
+    /* Surface / Glass */
+    --surface-bg: rgba(255, 255, 255, 0.08);
+    --surface-hover: rgba(255, 255, 255, 0.15);
+    --surface-border: rgba(255, 255, 255, 0.15);
+    --navbar-bg: rgba(26, 26, 46, 0.8);
+    --navbar-border: rgba(255, 255, 255, 0.1);
 
     /* Functional */
-    --pricing-featured-bg: rgba(124, 140, 248, 0.15);
-    --pricing-featured-border: rgba(124, 140, 248, 0.4);
-    --cta-bg: rgba(124, 140, 248, 0.15);
-    --btn-primary-bg: #7C8CF8;
-    --btn-primary-hover: #6B7BE5;
-    --btn-shadow: 0 4px 15px rgba(124, 140, 248, 0.4);
+    --pricing-featured-bg: rgba(52, 152, 219, 0.15);
+    --pricing-featured-border: rgba(52, 152, 219, 0.4);
+    --cta-bg: rgba(52, 152, 219, 0.15);
+    --btn-primary-bg: #3498db;
+    --btn-primary-hover: #2980b9;
+    --btn-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    --theme-toggle-bg: #484A50;
-    --theme-toggle-border: #565860;
+    --theme-toggle-bg: rgba(255, 255, 255, 0.05);
+    --theme-toggle-border: rgba(255, 255, 255, 0.1);
     --theme-toggle-color: #ffffff;
 
     /* Footer */
-    --footer-bg: #2A2C32;
-    --footer-border: #565860;
-    --footer-note-color: #9DA1A9;
+    --footer-bg: rgba(10, 10, 20, 0.6);
+    --footer-border: rgba(255, 255, 255, 0.1);
+    --footer-note-color: #888888;
 
-    /* Transitions */
-    --transition-micro: 0.15s ease;
+    /* Animation */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
 }
 
 [data-theme="light"] {
-    /* --- Component Variables (Light Theme - Sandstone) --- */
+    /* --- Component Variables (Light Theme) --- */
 
     /* Backgrounds */
-    --bg-primary: #EDEAE5;
-    --bg-gradient: linear-gradient(135deg, #EDEAE5 0%, #E2DED8 50%, #D8D4CC 100%);
-    --bg-gradient-hero: linear-gradient(135deg, #E2DED8 0%, #EDEAE5 30%, #E2DED8 70%, #D8D4CC 100%);
+    --bg-primary: #f0f2f5;
+    --bg-gradient: linear-gradient(135deg, #f0f2f5 0%, #e4e6eb 50%, #d1d5db 100%);
+    --bg-gradient-hero: linear-gradient(135deg, #e4e6eb 0%, #f0f2f5 30%, #e4e6eb 70%, #d1d5db 100%);
 
     /* Text */
-    --text-color: #4A4540;
-    --text-muted: #5C5750;
-    --text-dim: #7A756E;
-    --heading-color: #2C2926;
+    --text-color: #333333;
+    --text-muted: #555555;
+    --text-dim: #888888;
+    --heading-color: #1a1a2e;
 
     /* Accent */
-    --accent-color: #6B7BE5;
-    --accent-hover: #5A6AD4;
-    --accent-glow: rgba(107, 123, 229, 0.25);
+    --accent-color: #2980b9;
+    --accent-hover: #1f6dad;
+    --accent-glow: rgba(52, 152, 219, 0.3);
 
-    /* Surface */
-    --surface-bg: rgba(255, 255, 255, 0.6);
-    --surface-hover: rgba(255, 255, 255, 0.85);
-    --surface-border: rgba(0, 0, 0, 0.12);
-    --navbar-bg: rgba(237, 234, 229, 0.92);
-    --navbar-border: rgba(0, 0, 0, 0.12);
-
-    /* Section backgrounds */
-    --section-bg: rgba(255, 255, 255, 0.25);
-    --cta-section-bg: rgba(255, 255, 255, 0.25);
-    --gallery-border: rgba(0, 0, 0, 0.12);
-
-    /* Semantic Colors (muted for light) */
-    --color-primary: #6B7BE5;
-    --color-primary-hover: #5A6AD4;
-    --color-success: #2B9E6F;
-    --color-warning: #C49008;
-    --color-destructive: #DC2643;
-    --color-info: #2E7DB5;
-    --color-accent: #8B5ABF;
-    --focus-ring: 0 0 0 3px rgba(107, 123, 229, 0.2);
-
-    /* Semantic BG tints */
-    --success-bg: rgba(43, 158, 111, 0.1);
-    --warning-bg: rgba(196, 144, 8, 0.1);
-    --destructive-bg: rgba(220, 38, 67, 0.08);
-    --info-bg: rgba(96, 165, 250, 0.1);
+    /* Surface / Glass */
+    --surface-bg: rgba(255, 255, 255, 0.75);
+    --surface-hover: rgba(255, 255, 255, 0.95);
+    --surface-border: rgba(0, 0, 0, 0.15);
+    --navbar-bg: rgba(255, 255, 255, 0.92);
+    --navbar-border: rgba(0, 0, 0, 0.1);
 
     /* Functional */
-    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.06);
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.08);
     --pricing-featured-bg: rgba(255, 255, 255, 0.85);
     --pricing-featured-border: var(--accent-color);
-    --cta-bg: rgba(107, 123, 229, 0.1);
+    --cta-bg: rgba(52, 152, 219, 0.1);
 
     /* Footer */
-    --footer-bg: rgba(200, 196, 190, 0.4);
-    --footer-border: rgba(0, 0, 0, 0.12);
-    --footer-note-color: #7A756E;
-    --btn-primary-bg: #6B7BE5;
-    --btn-primary-hover: #5A6AD4;
-    --btn-shadow: 0 4px 15px rgba(107, 123, 229, 0.15);
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    --theme-toggle-bg: #F7F5F2;
-    --theme-toggle-border: rgba(0, 0, 0, 0.08);
-    --theme-toggle-color: #2C2926;
-}
-
-/* --- Focus Ring (Accessibility) --- */
-:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
-}
-
-.btn:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
+    --footer-bg: rgba(255, 255, 255, 0.6);
+    --footer-border: rgba(0, 0, 0, 0.1);
+    --footer-note-color: #666666;
+    --btn-primary-bg: #2980b9;
+    --btn-primary-hover: #216a9a;
+    --btn-shadow: 0 4px 15px rgba(41, 128, 185, 0.2);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --theme-toggle-bg: #f8f9fa;
+    --theme-toggle-border: rgba(0, 0, 0, 0.1);
+    --theme-toggle-color: #333333;
 }
 
 /* --- Reset & Base --- */
@@ -327,8 +274,18 @@ nav {
     right: 0;
     z-index: 10000;
     background: var(--navbar-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--navbar-border);
     transition: all var(--transition-normal);
+}
+
+/* Disable backdrop-filter on mobile to prevent stacking context issues */
+@media (max-width: 900px) {
+    .navbar {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
 }
 
 .navbar-container {
@@ -354,7 +311,7 @@ nav {
     color: var(--heading-color);
     font-size: var(--text-xl);
     font-weight: 700;
-    transition: color var(--transition-micro);
+    transition: color var(--transition-fast);
 }
 
 .navbar-logo i {
@@ -380,7 +337,7 @@ nav {
     color: var(--text-muted);
     font-size: 15px;
     border-radius: var(--radius-sm);
-    transition: all var(--transition-micro);
+    transition: all var(--transition-fast);
     white-space: nowrap;
 }
 
@@ -412,7 +369,7 @@ nav {
     cursor: pointer;
     color: var(--theme-toggle-color);
     font-size: 20px;
-    transition: all var(--transition-micro);
+    transition: all var(--transition-fast);
 }
 
 .navbar-toggle:hover {
@@ -432,7 +389,9 @@ nav {
     justify-content: center;
     font-size: 18px;
     color: var(--theme-toggle-color);
-    transition: all var(--transition-micro);
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     flex-shrink: 0;
 }
 
@@ -680,6 +639,8 @@ nav {
 
 .advantage-card {
     background: var(--surface-bg);
+    backdrop-filter: blur(var(--blur-glass));
+    -webkit-backdrop-filter: blur(var(--blur-glass));
     border: 1px solid var(--surface-border);
     border-radius: var(--radius-lg);
     padding: var(--space-8) var(--space-6);
@@ -873,6 +834,8 @@ nav {
     left: 0;
     right: 0;
     background: var(--surface-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     padding: 12px;
     text-align: center;
     font-size: 14px;
@@ -892,10 +855,12 @@ nav {
     cursor: pointer;
     color: var(--heading-color);
     font-size: 20px;
-    transition: all var(--transition-micro);
+    transition: all var(--transition-fast);
     display: flex;
     align-items: center;
     justify-content: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     z-index: 10;
 }
 
@@ -925,7 +890,7 @@ nav {
     background: var(--surface-border);
     border-radius: 50%;
     cursor: pointer;
-    transition: all var(--transition-micro);
+    transition: all var(--transition-fast);
     border: none;
     padding: 0;
 }
@@ -952,6 +917,8 @@ nav {
 
 .pricing-card {
     background: var(--surface-bg);
+    backdrop-filter: blur(var(--blur-glass));
+    -webkit-backdrop-filter: blur(var(--blur-glass));
     border: 1px solid var(--surface-border);
     border-radius: var(--radius-lg);
     padding: var(--space-10) var(--space-8);
@@ -1116,7 +1083,7 @@ nav {
     background: var(--surface-bg);
     border: 1px solid var(--surface-border);
     border-radius: var(--radius-md);
-    transition: all var(--transition-micro);
+    transition: all var(--transition-fast);
 }
 
 .trust-item:hover {
@@ -1175,7 +1142,7 @@ nav {
     font-size: 16px;
     font-weight: 500;
     color: var(--heading-color);
-    transition: all var(--transition-micro);
+    transition: all var(--transition-fast);
 }
 
 .faq-question:hover {
@@ -1220,6 +1187,8 @@ nav {
 
 .cta-box {
     background: var(--surface-bg);
+    backdrop-filter: blur(var(--blur-glass));
+    -webkit-backdrop-filter: blur(var(--blur-glass));
     border: 1px solid var(--surface-border);
     border-radius: var(--radius-lg);
     padding: var(--space-12) var(--space-8);
@@ -1268,7 +1237,7 @@ nav {
     gap: 10px;
     color: var(--text-muted);
     text-decoration: none;
-    transition: color var(--transition-micro);
+    transition: color var(--transition-fast);
 }
 
 .cta-contact a:hover {
@@ -1334,7 +1303,7 @@ nav {
     gap: 6px;
     text-decoration: none;
     color: var(--text-muted);
-    transition: color var(--transition-micro);
+    transition: color var(--transition-fast);
 }
 
 .footer-contacts a:hover {
@@ -1368,7 +1337,7 @@ nav {
 .footer-bottom a {
     color: var(--footer-note-color);
     text-decoration: none;
-    transition: opacity var(--transition-micro);
+    transition: opacity var(--transition-fast);
 }
 
 .footer-bottom a:hover {
@@ -1388,7 +1357,7 @@ nav {
     text-decoration: none;
     font-weight: 700;
     font-size: var(--text-base);
-    transition: all var(--transition-micro);
+    transition: all var(--transition-fast);
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -1447,13 +1416,13 @@ nav {
 }
 
 .btn-email {
-    background: rgba(124, 140, 248, 0.8);
-    border: 1px solid rgba(124, 140, 248, 0.5);
+    background: rgba(52, 152, 219, 0.8);
+    border: 1px solid rgba(52, 152, 219, 0.5);
     color: #ffffff;
 }
 
 .btn-email:hover {
-    background: rgba(124, 140, 248, 1);
+    background: rgba(52, 152, 219, 1);
     color: #ffffff;
 }
 
@@ -1542,7 +1511,7 @@ nav {
     }
 
     [data-theme="dark"] .navbar-menu {
-        background: rgba(42, 44, 50, 0.99);
+        background: rgba(26, 26, 46, 0.99);
         border-bottom: 1px solid var(--navbar-border);
     }
 
@@ -1727,7 +1696,7 @@ nav {
     }
 
     [data-theme="light"] .hero-title {
-        color: #2C2926;
+        color: #1a1a2e;
         text-shadow: none;
     }
 
@@ -1737,7 +1706,7 @@ nav {
     }
 
     [data-theme="light"] .hero-subtitle {
-        color: #4A4540;
+        color: #333333;
     }
 
     .hero-badge {
@@ -1789,13 +1758,14 @@ nav {
         flex-direction: column;
         align-items: stretch;
     }
+}
 
     /* Solid card backgrounds on mobile */
     .pricing-card,
     .trust-item,
     .advantage-card,
     .faq-item {
-        background: #484A50;
+        background: rgba(30, 30, 50, 0.98);
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
     }
@@ -1998,29 +1968,43 @@ nav {
 }
 
 /* ============================================
-   Fallback — navbar solid bg for browsers without backdrop-filter
+   Fallback for browsers without backdrop-filter
    ============================================ */
 @supports not (backdrop-filter: blur(12px)) {
     .navbar {
-        background: #2A2C32;
+        background: rgba(26, 26, 46, 0.95);
+    }
+
+    .advantage-card,
+    .pricing-card,
+    .faq-item,
+    .cta-box {
+        background: rgba(26, 26, 46, 0.9);
     }
 
     .theme-toggle {
-        background: #484A50;
+        background: rgba(26, 26, 46, 0.8);
     }
 
     [data-theme="light"] .navbar {
-        background: rgba(237, 234, 229, 0.98);
+        background: rgba(255, 255, 255, 0.95);
     }
 
     @media (max-width: 900px) {
         [data-theme="light"] .navbar-menu {
-            background: rgba(237, 234, 229, 0.99);
+            background: rgba(255, 255, 255, 0.98);
         }
     }
 
+    [data-theme="light"] .advantage-card,
+    [data-theme="light"] .pricing-card,
+    [data-theme="light"] .faq-item,
+    [data-theme="light"] .cta-box {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
     [data-theme="light"] .theme-toggle {
-        background: #F7F5F2;
+        background: rgba(255, 255, 255, 0.8);
     }
 }
 
