@@ -1,0 +1,143 @@
+/* sections/process.css — Process section */
+
+/* ============================================
+   Process Section
+   ============================================ */
+.process {
+    background: var(--section-bg);
+}
+
+.process-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.process-step {
+    display: grid;
+    grid-template-columns: 64px 1fr 64px;
+    gap: var(--space-8);
+    align-items: center;
+    padding: var(--space-8) 0;
+    border-bottom: 1px solid var(--surface-border);
+    transition: all var(--transition-normal);
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.process-step:last-child {
+    border-bottom: none;
+}
+
+.process-step:hover {
+    background: var(--surface-bg);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 0;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    font-size: 20px;
+    color: var(--heading-color);
+    margin-bottom: 8px;
+}
+
+.step-content p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--surface-bg);
+    border: 1px solid var(--surface-border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: var(--accent-color);
+    justify-self: end;
+}
+
+
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .process-step {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    /* Fix for process steps */
+    .process-step {
+        grid-template-columns: 50px 1fr;
+        gap: 16px;
+        padding: 20px 0;
+        max-width: 100%;
+    }
+
+    .process-step:hover {
+        padding: 20px;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .step-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-step:hover {
+        padding: 15px;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .process-step {
+        grid-template-columns: 45px 1fr;
+        gap: 12px;
+    }
+
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .process-step {
+        grid-template-columns: 40px 1fr;
+        gap: 10px;
+    }
+
+    .process-step:hover {
+        padding: 12px;
+        margin: 0;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}

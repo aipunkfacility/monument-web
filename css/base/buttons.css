@@ -1,0 +1,125 @@
+/* base/buttons.css — Button components */
+
+/* ============================================
+   Buttons
+   ============================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: var(--text-base);
+    transition: all var(--transition-micro);
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--btn-shadow);
+}
+
+.btn-lg {
+    padding: 18px 36px;
+    font-size: 17px;
+}
+
+.btn-primary {
+    background: var(--btn-primary-bg);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: var(--btn-primary-hover);
+    color: #ffffff;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn-outline:hover {
+    background: var(--accent-color);
+    color: #ffffff;
+}
+
+.btn-telegram {
+    background: rgba(0, 136, 204, 0.8);
+    border: 1px solid rgba(0, 136, 204, 0.5);
+    color: #ffffff;
+}
+
+.btn-telegram:hover {
+    background: rgba(0, 136, 204, 1);
+    color: #ffffff;
+}
+
+.btn-whatsapp {
+    background: rgba(37, 211, 102, 0.8);
+    border: 1px solid rgba(37, 211, 102, 0.5);
+    color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+    background: rgba(37, 211, 102, 1);
+    color: #ffffff;
+}
+
+.btn-email {
+    background: rgba(52, 152, 219, 0.8);
+    border: 1px solid rgba(52, 152, 219, 0.5);
+    color: #ffffff;
+}
+
+.btn-email:hover {
+    background: rgba(52, 152, 219, 1);
+    color: #ffffff;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Hero: btn-outline always white (on dark overlay) */
+.hero .btn-outline {
+    border-color: #ffffff;
+    color: #ffffff !important;
+}
+
+.hero .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+    color: #ffffff !important;
+}
+
+[data-theme="light"] .hero .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+    color: #ffffff !important;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .hero-cta .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-cta .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}

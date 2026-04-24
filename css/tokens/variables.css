@@ -1,0 +1,207 @@
+/* tokens/variables.css — Design tokens & theme variables */
+
+:root {
+    /* --- Design Tokens --- */
+
+    /* Spacing (8-point grid) */
+    --space-1: 0.25rem;
+    /* 4px */
+    --space-2: 0.5rem;
+    /* 8px */
+    --space-3: 0.75rem;
+    /* 12px */
+    --space-4: 1rem;
+    /* 16px */
+    --space-5: 1.25rem;
+    /* 20px */
+    --space-6: 1.5rem;
+    /* 24px */
+    --space-8: 2rem;
+    /* 32px */
+    --space-10: 2.5rem;
+    /* 40px */
+    --space-12: 3rem;
+    /* 48px */
+    --space-16: 4rem;
+    /* 64px */
+
+    /* Typography Scale */
+    --text-xs: 0.75rem;
+    /* 12px */
+    --text-sm: 0.875rem;
+    /* 14px */
+    --text-base: 1rem;
+    /* 16px */
+    --text-lg: 1.125rem;
+    /* 18px */
+    --text-xl: 1.25rem;
+    /* 20px */
+    --text-2xl: 1.5rem;
+    /* 24px */
+    --text-3xl: clamp(2rem, 4vw + 1rem, 3rem);
+    /* Fluid H2 */
+    --text-4xl: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+    /* Fluid H1 */
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --blur-glass: 16px;
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    /* --- Semantic Colors (Mineral Palette — from Granite CRM) --- */
+    --color-primary: #7C8CF8;
+    --color-primary-hover: #6B7BE5;
+    --color-success: #34D399;
+    --color-warning: #FBBF24;
+    --color-destructive: #F43F5E;
+    --color-info: #60A5FA;
+    --color-accent: #C084FC;
+    --focus-ring: 0 0 0 3px rgba(124, 140, 248, 0.3);
+
+    /* --- Component Variables (Dark Theme — Granite Palette) --- */
+
+    /* Backgrounds (from Granite CRM reference) */
+    --bg-primary: #3D3F45;
+    --bg-gradient: linear-gradient(135deg, #3D3F45 0%, #2A2C32 50%, #3D3F45 100%);
+    --bg-gradient-hero: linear-gradient(135deg, #3D3F45 0%, #2A2C32 30%, #1A1B20 70%, #2A2C32 100%);
+
+    /* Text Colors (Quartz scale) */
+    --text-color: #E4E5E9;
+    --text-muted: #B0B3BA;
+    --text-dim: #9DA1A9;
+    --heading-color: #E4E5E9;
+
+    /* Accent */
+    --accent-color: #7C8CF8;
+    --accent-hover: #6B7BE5;
+
+    /* Semantic BG tints */
+    --success-bg: rgba(52, 211, 153, 0.12);
+    --warning-bg: rgba(251, 191, 36, 0.12);
+    --destructive-bg: rgba(244, 63, 94, 0.12);
+    --info-bg: rgba(96, 165, 250, 0.12);
+
+    /* Surface (Granite palette) */
+    --surface-bg: rgba(72, 74, 80, 0.6);
+    --surface-hover: #55575E;
+    --surface-border: #565860;
+    --navbar-bg: rgba(42, 44, 50, 0.85);
+    --navbar-border: #565860;
+
+    /* Section backgrounds (zonal contrast) */
+    --section-bg: #3A3C42;
+    --section-alt-bg: #2A2C32;
+    --gallery-border: #565860;
+
+    /* Hero overlay */
+    --hero-overlay: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.80) 20%, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0) 65%);
+    --hero-text-color: #ffffff;
+    --hero-text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    --hero-subtitle-color: #ffffff;
+    --hero-subtitle-shadow: 0 1px 10px rgba(0,0,0,0.3);
+    --hero-badge-color: var(--accent-color);
+    --hero-badge-border: var(--accent-color);
+
+    /* Functional */
+    --pricing-featured-bg: rgba(124, 140, 248, 0.15);
+    --pricing-featured-border: rgba(124, 140, 248, 0.4);
+    --cta-bg: rgba(124, 140, 248, 0.15);
+    --btn-primary-bg: #7C8CF8;
+    --btn-primary-hover: #6B7BE5;
+    --btn-shadow: 0 4px 15px rgba(124, 140, 248, 0.4);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --theme-toggle-bg: #484A50;
+    --theme-toggle-border: #565860;
+    --theme-toggle-color: #ffffff;
+
+    /* Footer */
+    --footer-bg: rgba(42, 44, 50, 0.6);
+    --footer-border: #565860;
+    --footer-note-color: #9DA1A9;
+
+    /* Transitions */
+    --transition-micro: 0.15s ease;
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+[data-theme="light"] {
+    /* --- Component Variables (Light Theme - Sandstone) --- */
+
+    /* Backgrounds */
+    --bg-primary: #EDEAE5;
+    --bg-gradient: linear-gradient(135deg, #EDEAE5 0%, #E2DED8 50%, #D8D4CC 100%);
+    --bg-gradient-hero: linear-gradient(135deg, #E2DED8 0%, #EDEAE5 30%, #E2DED8 70%, #D8D4CC 100%);
+
+    /* Text */
+    --text-color: #4A4540;
+    --text-muted: #5C5750;
+    --text-dim: #7A756E;
+    --heading-color: #2C2926;
+
+    /* Accent */
+    --accent-color: #6B7BE5;
+    --accent-hover: #5A6AD4;
+
+    /* Surface */
+    --surface-bg: rgba(255, 255, 255, 0.6);
+    --surface-hover: rgba(255, 255, 255, 0.85);
+    --surface-border: rgba(0, 0, 0, 0.12);
+    --navbar-bg: rgba(237, 234, 229, 0.92);
+    --navbar-border: rgba(0, 0, 0, 0.08);
+
+    /* Section backgrounds (zonal contrast) */
+    --section-bg: rgba(255, 255, 255, 0.35);
+    --section-alt-bg: #D8D4CC;
+    --gallery-border: rgba(0, 0, 0, 0.12);
+
+    /* Hero overlay — Variant C: indigo-tinted + white text */
+    --hero-overlay: linear-gradient(90deg, rgba(30,30,60,0.78) 0%, rgba(30,30,60,0.60) 20%, rgba(30,30,60,0.38) 35%, rgba(30,30,60,0.12) 50%, rgba(30,30,60,0) 65%);
+    --hero-text-color: #ffffff;
+    --hero-text-shadow: 0 2px 20px rgba(30,30,60,0.5), 0 0 60px rgba(30,30,60,0.25);
+    --hero-subtitle-color: #ffffff;
+    --hero-subtitle-shadow: 0 1px 10px rgba(30,30,60,0.3);
+    --hero-badge-color: #ffffff;
+    --hero-badge-border: rgba(255,255,255,0.5);
+
+    /* Semantic Colors (muted for light) */
+    --color-primary: #6B7BE5;
+    --color-primary-hover: #5A6AD4;
+    --color-success: #2B9E6F;
+    --color-warning: #C49008;
+    --color-destructive: #DC2643;
+    --color-info: #2E7DB5;
+    --color-accent: #8B5ABF;
+    --focus-ring: 0 0 0 3px rgba(107, 123, 229, 0.2);
+
+    /* Semantic BG tints */
+    --success-bg: rgba(43, 158, 111, 0.1);
+    --warning-bg: rgba(196, 144, 8, 0.1);
+    --destructive-bg: rgba(220, 38, 67, 0.08);
+    --info-bg: rgba(96, 165, 250, 0.1);
+
+    /* Functional */
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.06);
+    --pricing-featured-bg: rgba(255, 255, 255, 0.85);
+    --pricing-featured-border: var(--accent-color);
+    --cta-bg: rgba(107, 123, 229, 0.1);
+
+    /* Footer */
+    --footer-bg: rgba(200, 196, 190, 0.4);
+    --footer-border: rgba(0, 0, 0, 0.12);
+    --footer-note-color: #7A756E;
+    --btn-primary-bg: #6B7BE5;
+    --btn-primary-hover: #5A6AD4;
+    --btn-shadow: 0 4px 15px rgba(107, 123, 229, 0.15);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    --theme-toggle-bg: #F7F5F2;
+    --theme-toggle-border: rgba(0, 0, 0, 0.08);
+    --theme-toggle-color: #2C2926;
+}
+

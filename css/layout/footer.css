@@ -1,0 +1,114 @@
+/* layout/footer.css — Footer */
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+    background: var(--footer-bg);
+    backdrop-filter: blur(var(--blur-glass));
+    -webkit-backdrop-filter: blur(var(--blur-glass));
+    border-top: 1px solid var(--footer-border);
+    padding: var(--space-10) 0 var(--space-6);
+    text-align: center;
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--heading-color);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: var(--space-6);
+}
+
+.footer-logo i {
+    font-size: 24px;
+    color: var(--accent-color);
+}
+
+.footer-tagline {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.footer-tagline::before {
+    content: "— ";
+    opacity: 0.5;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2) var(--space-1);
+    font-size: 15px;
+    margin-bottom: var(--space-6);
+}
+
+.footer-contacts a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: color var(--transition-micro);
+}
+
+.footer-contacts a:hover {
+    color: var(--accent-color);
+}
+
+.footer-contacts a i {
+    font-size: 18px;
+}
+
+.footer-sep {
+    color: var(--text-muted);
+    opacity: 0.4;
+}
+
+.footer-bottom {
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--footer-border);
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: var(--footer-note-color);
+    margin: 0 0 4px;
+}
+
+.footer-bottom p:last-child {
+    margin-bottom: 0;
+}
+
+.footer-bottom a {
+    color: var(--footer-note-color);
+    text-decoration: none;
+    transition: opacity var(--transition-micro);
+}
+
+.footer-bottom a:hover {
+    opacity: 0.7;
+}
+
+
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .footer {
+        background: #484A50;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    [data-theme="light"] .footer {
+        background: rgba(255, 255, 255, 0.98);
+    }
+}

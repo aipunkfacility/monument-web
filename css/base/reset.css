@@ -1,0 +1,47 @@
+/* base/reset.css — Reset & base element styles */
+
+/* --- Reset & Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: var(--text-base);
+    background: var(--bg-primary);
+    background-image: var(--bg-gradient);
+    color: var(--text-color);
+    line-height: 1.55;
+    min-height: 100vh;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    transition: background var(--transition-normal), color var(--transition-normal);
+}
+
+/* Prevent horizontal overflow */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+section,
+main,
+footer,
+nav {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+

@@ -1,0 +1,65 @@
+/* sections/sections-common.css — Common section styles */
+
+/* ============================================
+   Sections (Common)
+   ============================================ */
+.section {
+    padding: var(--space-16) 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+}
+
+.section-tag {
+    display: inline-block;
+    background: var(--cta-bg);
+    color: var(--accent-color);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: var(--text-3xl);
+    color: var(--heading-color);
+    margin-bottom: var(--space-4);
+    font-weight: 600;
+}
+
+.section-desc {
+    font-size: 18px;
+    color: var(--text-dim);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .section {
+        padding: var(--space-12) 0;
+    }
+
+    .section-title,
+    .section-desc {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .section-title {
+        font-size: 22px;
+    }
+
+    .section-desc {
+        font-size: 14px;
+    }
+}
