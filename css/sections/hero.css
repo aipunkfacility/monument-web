@@ -191,41 +191,41 @@
         display: none;
     }
 
-    /* Switch overlay to vertical gradient for mobile */
+    /* Remove full-screen overlay on mobile — face must be visible */
     .hero-overlay {
-        background: linear-gradient(to bottom,
-                rgba(0,0,0,0.15) 0%,
-                rgba(0,0,0,0.50) 35%,
-                rgba(0,0,0,0.88) 100%);
+        background: none;
     }
 
-    [data-theme="light"] .hero-overlay {
-        background: linear-gradient(to bottom,
-                rgba(30,30,60,0.12) 0%,
-                rgba(30,30,60,0.40) 30%,
-                rgba(30,30,60,0.72) 65%,
-                rgba(30,30,60,0.90) 100%);
-    }
-
-    /* Gradient overlay from 40% to 100% of height (dark theme only) */
+    /* Bottom-only gradient for text readability (dark theme) */
     .hero-bg::after {
         content: '';
         position: absolute;
-        top: 40%;
+        top: 45%;
         left: 0;
         right: 0;
         bottom: 0;
-        height: 60%;
+        height: 55%;
         background: linear-gradient(to bottom,
                 transparent 0%,
-                rgba(0, 0, 0, 0.3) 10%,
-                rgba(0, 0, 0, 0.7) 40%,
-                rgba(0, 0, 0, 0.95) 100%);
+                rgba(0, 0, 0, 0.25) 15%,
+                rgba(0, 0, 0, 0.55) 40%,
+                rgba(0, 0, 0, 0.85) 100%);
     }
 
-    /* Variant C: no white gradient — overlay handles darkening */
+    /* Light theme: indigo-tinted bottom gradient */
     [data-theme="light"] .hero-bg::after {
-        display: none;
+        content: '';
+        position: absolute;
+        top: 45%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 55%;
+        background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(30, 30, 60, 0.20) 15%,
+                rgba(30, 30, 60, 0.48) 40%,
+                rgba(30, 30, 60, 0.78) 100%);
     }
 
     .hero-content {
