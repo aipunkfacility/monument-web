@@ -31,20 +31,38 @@
     if (heroSlider) {
         const slides = heroSlider.querySelectorAll('.hero-slide');
         let currentSlide = 0;
+        let transitioning = false;
+        let zIndexCounter = 1;  // ensures incoming slide always renders on top
         const totalSlides = slides.length;
         const slideInterval = 5000; // 5 seconds
-        
+        const fadeDuration = 1500;  // must match CSS transition: opacity 1.5s
+
         // Set first slide as active
         if (slides.length > 0) {
             slides[0].classList.add('active');
+            slides[0].style.zIndex = zIndexCounter;
         }
-        
+
         function nextSlide() {
-            slides[currentSlide].classList.remove('active');
+            if (transitioning) return;
+            transitioning = true;
+
+            const prevSlide = currentSlide;
             currentSlide = (currentSlide + 1) % totalSlides;
+
+            // Incoming slide gets a higher z-index → always renders on top
+            zIndexCounter++;
+            slides[currentSlide].style.zIndex = zIndexCounter;
             slides[currentSlide].classList.add('active');
+
+            // After transition completes, hide the old slide underneath
+            setTimeout(() => {
+                slides[prevSlide].classList.remove('active');
+                slides[prevSlide].style.zIndex = '';
+                transitioning = false;
+            }, fadeDuration + 50); // +50ms safety margin
         }
-        
+
         // Auto-advance slides
         if (totalSlides > 1) {
             setInterval(nextSlide, slideInterval);

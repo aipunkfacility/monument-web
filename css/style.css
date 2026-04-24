@@ -598,7 +598,7 @@ nav {
 }
 
 .hero-title {
-    font-size: clamp(32px, 5.2vw, 55px);
+    font-size: clamp(28px, 4.5vw, 48px);
     font-weight: 700;
     color: var(--hero-text-color);
     line-height: 1.1;
@@ -1764,25 +1764,10 @@ nav {
         left: 0;
     }
 
-    /* Hide desktop slider on mobile */
-    .hero-slider {
-        display: none;
-    }
-
-    /* Keep overlay but switch to vertical gradient for mobile */
+    /* Hide desktop slider and overlay on mobile */
+    .hero-slider,
     .hero-overlay {
-        background: linear-gradient(to bottom,
-                rgba(0,0,0,0.1) 0%,
-                rgba(0,0,0,0.45) 40%,
-                rgba(0,0,0,0.85) 100%);
-    }
-
-    [data-theme="light"] .hero-overlay {
-        background: linear-gradient(to bottom,
-                rgba(30,30,60,0.08) 0%,
-                rgba(30,30,60,0.35) 35%,
-                rgba(30,30,60,0.65) 70%,
-                rgba(30,30,60,0.85) 100%);
+        display: none;
     }
 
     /* Gradient overlay from 40% to 100% of height */
@@ -1801,9 +1786,12 @@ nav {
                 rgba(0, 0, 0, 0.95) 100%);
     }
 
-    /* No white gradient for Variant C — overlay handles darkening */
     [data-theme="light"] .hero-bg::after {
-        display: none;
+        background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(255, 255, 255, 0.3) 10%,
+                rgba(255, 255, 255, 0.7) 40%,
+                rgba(255, 255, 255, 0.98) 100%);
     }
 
     .hero-content {
@@ -1814,14 +1802,13 @@ nav {
     }
 
     .hero-title {
-        font-size: 30px;
+        font-size: 26px;
         color: #ffffff;
     }
 
-    /* Variant C: white text on indigo overlay */
     [data-theme="light"] .hero-title {
-        color: #ffffff;
-        text-shadow: var(--hero-text-shadow);
+        color: #2C2926;
+        text-shadow: none;
     }
 
     .hero-subtitle {
@@ -1829,9 +1816,8 @@ nav {
         font-size: 15px;
     }
 
-    /* Variant C: white subtitle on indigo overlay */
     [data-theme="light"] .hero-subtitle {
-        color: #ffffff;
+        color: #4A4540;
     }
 
     .hero-badge {
@@ -1937,7 +1923,7 @@ nav {
     }
 
     .hero-title {
-        font-size: 25px;
+        font-size: 22px;
     }
 
     .hero-subtitle {
@@ -2030,7 +2016,7 @@ nav {
     }
 
     .hero-title {
-        font-size: 21px;
+        font-size: 18px;
     }
 
     .hero-subtitle {
