@@ -61,7 +61,7 @@
     // Get saved theme preference or default to 'system'
     let savedThemeState = 'system';
     try {
-        const stored = localStorage.getItem('theme-mode');
+        const stored = localStorage.getItem('retouchgrav-theme');
         if (stored && THEME_STATES.includes(stored)) {
             savedThemeState = stored;
         }
@@ -83,7 +83,7 @@
         updateToggleIcons(newThemeState);
         
         try {
-            localStorage.setItem('theme-mode', newThemeState);
+            localStorage.setItem('retouchgrav-theme', newThemeState);
         } catch (e) {
             console.warn('Could not save theme preference');
         }
