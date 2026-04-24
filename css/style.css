@@ -102,7 +102,7 @@
     --gallery-border: #565860;
 
     /* Hero overlay */
-    --hero-overlay: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 25%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0) 50%);
+    --hero-overlay: linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.70) 25%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0) 55%);
     --hero-text-color: #ffffff;
     --hero-text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
     --hero-subtitle-color: #ffffff;
@@ -165,7 +165,7 @@
     --gallery-border: rgba(0, 0, 0, 0.12);
 
     /* Hero overlay — Variant C: indigo-tinted + white text */
-    --hero-overlay: linear-gradient(90deg, rgba(30,30,60,0.58) 0%, rgba(30,30,60,0.38) 20%, rgba(30,30,60,0.18) 35%, rgba(30,30,60,0.05) 50%, rgba(30,30,60,0) 60%);
+    --hero-overlay: linear-gradient(90deg, rgba(30,30,60,0.72) 0%, rgba(30,30,60,0.52) 20%, rgba(30,30,60,0.28) 35%, rgba(30,30,60,0.08) 50%, rgba(30,30,60,0) 60%);
     --hero-text-color: #ffffff;
     --hero-text-shadow: 0 2px 20px rgba(30,30,60,0.5), 0 0 60px rgba(30,30,60,0.25);
     --hero-subtitle-color: #ffffff;
@@ -1764,13 +1764,28 @@ nav {
         left: 0;
     }
 
-    /* Hide desktop slider and overlay on mobile */
-    .hero-slider,
-    .hero-overlay {
+    /* Hide desktop slider on mobile, keep overlay */
+    .hero-slider {
         display: none;
     }
 
-    /* Gradient overlay from 40% to 100% of height */
+    /* Switch overlay to vertical gradient for mobile */
+    .hero-overlay {
+        background: linear-gradient(to bottom,
+                rgba(0,0,0,0.15) 0%,
+                rgba(0,0,0,0.50) 35%,
+                rgba(0,0,0,0.88) 100%);
+    }
+
+    [data-theme="light"] .hero-overlay {
+        background: linear-gradient(to bottom,
+                rgba(30,30,60,0.12) 0%,
+                rgba(30,30,60,0.40) 30%,
+                rgba(30,30,60,0.72) 65%,
+                rgba(30,30,60,0.90) 100%);
+    }
+
+    /* Gradient overlay from 40% to 100% of height (dark theme only) */
     .hero-bg::after {
         content: '';
         position: absolute;
@@ -1786,12 +1801,9 @@ nav {
                 rgba(0, 0, 0, 0.95) 100%);
     }
 
+    /* Variant C: no white gradient — overlay handles darkening */
     [data-theme="light"] .hero-bg::after {
-        background: linear-gradient(to bottom,
-                transparent 0%,
-                rgba(255, 255, 255, 0.3) 10%,
-                rgba(255, 255, 255, 0.7) 40%,
-                rgba(255, 255, 255, 0.98) 100%);
+        display: none;
     }
 
     .hero-content {
@@ -1806,9 +1818,10 @@ nav {
         color: #ffffff;
     }
 
+    /* Variant C: white text on indigo overlay */
     [data-theme="light"] .hero-title {
-        color: #2C2926;
-        text-shadow: none;
+        color: #ffffff;
+        text-shadow: var(--hero-text-shadow);
     }
 
     .hero-subtitle {
@@ -1816,8 +1829,9 @@ nav {
         font-size: 15px;
     }
 
+    /* Variant C: white subtitle on indigo overlay */
     [data-theme="light"] .hero-subtitle {
-        color: #4A4540;
+        color: #ffffff;
     }
 
     .hero-badge {
