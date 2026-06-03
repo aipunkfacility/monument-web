@@ -160,23 +160,6 @@
         let currentIndex = 0;
         const totalSlides = slides.length;
         
-        // Preload images in all slides to prevent empty slide issues
-        function preloadSlideImages() {
-            slides.forEach((slide, index) => {
-                const images = slide.querySelectorAll('img');
-                images.forEach(img => {
-                    // Force image load by creating a new Image object
-                    if (img.src && !img.complete) {
-                        const preloadImg = new Image();
-                        preloadImg.src = img.src;
-                    }
-                });
-            });
-        }
-        
-        // Run preload after a short delay to not block initial render
-        setTimeout(preloadSlideImages, 100);
-        
         // Create dots
         for (let i = 0; i < totalSlides; i++) {
             const dot = document.createElement('button');
@@ -256,6 +239,45 @@
                 }
             }
         }
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
+
+        if (lightbox && lightboxImage && lightboxClose) {
+            // Open on image click
+            slides.forEach(function(slide) {
+                var img = slide.querySelector('img');
+                if (img) {
+                    img.style.cursor = 'zoom-in';
+                    img.addEventListener('click', function() {
+                        lightboxImage.src = img.src;
+                        lightboxImage.alt = img.alt;
+                        lightbox.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    });
+                }
+            });
+
+            // Close handlers
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        }
     }
 
     // ============================================
@@ -300,7 +322,7 @@
                 
                 const navbarHeight = navbar.offsetHeight;
                 const targetPosition = target.getBoundingClientRect().top + window.scrollY;
-                const offsetPosition = targetPosition - navbarHeight - 20;
+                const offsetPosition = targetPosition - navbarHeight;
                 
                 window.scrollTo({
                     top: offsetPosition,

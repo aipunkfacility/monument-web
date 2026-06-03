@@ -261,42 +261,14 @@
                 </button>
                 <div class="portfolio-track-viewport">
                     <div class="portfolio-track">
-                        <!-- Женский портрет -->
                         <div class="portfolio-slide">
-                            <h3 class="portfolio-title">Женский портрет</h3>
-                            <div class="portfolio-grid">
-                                <div class="portfolio-item">
-                                    <img src="img/woman_original.webp" alt="Исходная фотография (женский портрет)">
-                                    <span class="portfolio-label">Оригинал</span>
-                                </div>
-                                <div class="portfolio-item">
-                                    <img src="img/woman_retouch.webp" alt="Результат ретуши для гравировки">
-                                    <span class="portfolio-label">Ретушь</span>
-                                </div>
-                                <div class="portfolio-item">
-                                    <img src="img/woman_stone.webp" alt="Пример гравировки на черном граните">
-                                    <span class="portfolio-label">На граните</span>
-                                </div>
-                            </div>
+                            <img src="img/brodskiy.webp" alt="Портрет — Бродский">
                         </div>
-                        
-                        <!-- Мужской портрет -->
                         <div class="portfolio-slide">
-                            <h3 class="portfolio-title">Мужской портрет</h3>
-                            <div class="portfolio-grid">
-                                <div class="portfolio-item">
-                                    <img src="img/man_original.webp" alt="Исходная фотография (мужской портрет)">
-                                    <span class="portfolio-label">Оригинал</span>
-                                </div>
-                                <div class="portfolio-item">
-                                    <img src="img/man_retouch.webp" alt="Ретушь портрета с очисткой фона">
-                                    <span class="portfolio-label">Ретушь</span>
-                                </div>
-                                <div class="portfolio-item">
-                                    <img src="img/man_stone.webp" alt="Гравировка портрета на памятнике">
-                                    <span class="portfolio-label">На граните</span>
-                                </div>
-                            </div>
+                            <img src="img/gorkiy.webp" alt="Портрет — Горький">
+                        </div>
+                        <div class="portfolio-slide">
+                            <img src="img/tolstoi.webp" alt="Портрет — Толстой">
                         </div>
                     </div>
                 </div>
@@ -305,7 +277,7 @@
                 </button>
             </div>
             
-            <div class="portfolio-dots" id="portfolioDots" style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;"></div>
+            <div class="portfolio-dots" id="portfolioDots"></div>
         </div>
     </section>
 
@@ -548,5 +520,15 @@
     <button class="scroll-top" id="scrollTop" aria-label="Наверх">
         <i class="ri-arrow-up-line"></i>
     </button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр изображения">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Закрыть">
+            <i class="ri-close-line"></i>
+        </button>
+        <div class="lightbox-content">
+            <img class="lightbox-image" id="lightboxImage" src="" alt="">
+        </div>
+    </div>
 </body>
 </html>
