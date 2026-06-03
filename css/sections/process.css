@@ -7,6 +7,10 @@
     background: var(--section-bg);
 }
 
+#process {
+    padding-top: var(--space-6);
+}
+
 .process-timeline {
     max-width: 800px;
     margin: 0 auto;

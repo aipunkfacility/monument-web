@@ -7,6 +7,10 @@
     /* background removed — deep zone: cards on body gradient */
 }
 
+#advantages {
+    padding-top: var(--space-6);
+}
+
 .advantages-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
