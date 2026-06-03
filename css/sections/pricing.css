@@ -7,6 +7,10 @@
     background: var(--section-bg);
 }
 
+#pricing {
+    padding-top: var(--space-6);
+}
+
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

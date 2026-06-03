@@ -7,6 +7,10 @@
     /* background removed — deep zone: cards on body gradient */
 }
 
+#faq {
+    padding-top: var(--space-6);
+}
+
 .faq-list {
     max-width: 800px;
     margin: 0 auto;
