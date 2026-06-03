@@ -43,6 +43,10 @@
     --text-4xl: clamp(2.5rem, 5vw + 1rem, 4.5rem);
     /* Fluid H1 */
 
+    /* Font Families */
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+
     /* Border Radius */
     --radius-sm: 8px;
     --radius-md: 12px;
@@ -61,6 +65,10 @@
     --color-destructive: #F43F5E;
     --color-info: #60A5FA;
     --color-accent: #C084FC;
+    --color-white: #ffffff;
+    --z-navbar: 10000;
+    --z-lightbox: 10001;
+    --z-controls: 10;
     --focus-ring: 0 0 0 3px rgba(124, 140, 248, 0.3);
 
     /* --- Component Variables (Dark Theme — Granite Palette) --- */
@@ -96,7 +104,6 @@
     /* Section backgrounds (zonal contrast) */
     --section-bg: #3A3C42;
     --section-alt-bg: #2A2C32;
-    --gallery-border: #565860;
 
     /* Hero overlay */
     --hero-overlay: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.80) 20%, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0) 65%);
@@ -122,6 +129,7 @@
     /* Footer */
     --footer-bg: rgba(42, 44, 50, 0.6);
     --footer-border: #565860;
+    --surface-bg-solid: #484A50;
     --footer-note-color: #9DA1A9;
 
     /* Transitions */
@@ -159,7 +167,6 @@
     /* Section backgrounds (zonal contrast) */
     --section-bg: rgba(255, 255, 255, 0.35);
     --section-alt-bg: #D8D4CC;
-    --gallery-border: rgba(0, 0, 0, 0.12);
 
     /* Hero overlay — Variant C: indigo-tinted + white text */
     --hero-overlay: linear-gradient(90deg, rgba(30,30,60,0.78) 0%, rgba(30,30,60,0.60) 20%, rgba(30,30,60,0.38) 35%, rgba(30,30,60,0.12) 50%, rgba(30,30,60,0) 65%);
@@ -178,6 +185,7 @@
     --color-destructive: #DC2643;
     --color-info: #2E7DB5;
     --color-accent: #8B5ABF;
+    --color-white: #ffffff;
     --focus-ring: 0 0 0 3px rgba(107, 123, 229, 0.2);
 
     /* Semantic BG tints */
@@ -196,6 +204,7 @@
     --footer-bg: rgba(200, 196, 190, 0.4);
     --footer-border: rgba(0, 0, 0, 0.12);
     --footer-note-color: #7A756E;
+    --surface-bg-solid: rgba(255, 255, 255, 0.98);
     --btn-primary-bg: #6B7BE5;
     --btn-primary-hover: #5A6AD4;
     --btn-shadow: 0 4px 15px rgba(107, 123, 229, 0.15);

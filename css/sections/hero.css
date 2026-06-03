@@ -109,7 +109,7 @@
 }
 
 .hero-accent {
-    color: #ffffff;
+    color: var(--color-white);
     display: block;
 }
 
@@ -237,23 +237,23 @@
 
     .hero-title {
         font-size: 26px;
-        color: #ffffff;
+        color: var(--color-white);
     }
 
     /* Variant C: white text on indigo overlay */
     [data-theme="light"] .hero-title {
-        color: #ffffff;
+        color: var(--color-white);
         text-shadow: var(--hero-text-shadow);
     }
 
     .hero-subtitle {
-        color: #ffffff;
+        color: var(--color-white);
         font-size: 15px;
     }
 
     /* Variant C: white subtitle on indigo overlay */
     [data-theme="light"] .hero-subtitle {
-        color: #ffffff;
+        color: var(--color-white);
     }
 
     .hero-badge {

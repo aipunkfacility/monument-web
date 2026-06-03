@@ -30,12 +30,12 @@
 
 .btn-primary {
     background: var(--btn-primary-bg);
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .btn-primary:hover {
     background: var(--btn-primary-hover);
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .btn-outline {
@@ -46,40 +46,40 @@
 
 .btn-outline:hover {
     background: var(--accent-color);
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .btn-telegram {
     background: rgba(0, 136, 204, 0.8);
     border: 1px solid rgba(0, 136, 204, 0.5);
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .btn-telegram:hover {
     background: rgba(0, 136, 204, 1);
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .btn-whatsapp {
     background: rgba(37, 211, 102, 0.8);
     border: 1px solid rgba(37, 211, 102, 0.5);
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .btn-whatsapp:hover {
     background: rgba(37, 211, 102, 1);
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .btn-email {
     background: rgba(52, 152, 219, 0.8);
     border: 1px solid rgba(52, 152, 219, 0.5);
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .btn-email:hover {
     background: rgba(52, 152, 219, 1);
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .btn-block {
@@ -88,20 +88,20 @@
 
 /* Hero: btn-outline always white (on dark overlay) */
 .hero .btn-outline {
-    border-color: #ffffff;
-    color: #ffffff !important;
+    border-color: var(--color-white);
+    color: var(--color-white) !important;
 }
 
 .hero .btn-outline:hover {
     background: rgba(255, 255, 255, 0.15);
-    border-color: #ffffff;
-    color: #ffffff !important;
+    border-color: var(--color-white);
+    color: var(--color-white) !important;
 }
 
 [data-theme="light"] .hero .btn-outline:hover {
     background: rgba(255, 255, 255, 0.15);
-    border-color: #ffffff;
-    color: #ffffff !important;
+    border-color: var(--color-white);
+    color: var(--color-white) !important;
 }
 
 /* --- Responsive --- */

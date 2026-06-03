@@ -76,7 +76,7 @@
 
 .navbar-cta {
     background: var(--btn-primary-bg) !important;
-    color: #ffffff !important;
+    color: var(--color-white) !important;
     padding: var(--space-2) var(--space-5) !important;
     border-radius: var(--radius-sm) !important;
     font-weight: 700 !important;
@@ -84,7 +84,7 @@
 
 .navbar-cta:hover {
     background: var(--btn-primary-hover) !important;
-    color: #ffffff !important;
+    color: var(--color-white) !important;
 }
 
 .navbar-toggle {

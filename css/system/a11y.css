@@ -17,7 +17,7 @@
     left: 50%;
     transform: translateX(-50%);
     background: var(--accent-color);
-    color: #ffffff;
+    color: var(--color-white);
     padding: 12px 24px;
     border-radius: 0 0 8px 8px;
     font-size: 14px;
@@ -29,7 +29,7 @@
 
 .skip-link:focus {
     top: 0;
-    outline: 2px solid #ffffff;
+    outline: 2px solid var(--color-white);
     outline-offset: 2px;
 }
 

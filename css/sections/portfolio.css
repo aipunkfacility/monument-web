@@ -72,7 +72,7 @@
 
 .portfolio-btn:hover {
     background: var(--accent-color);
-    color: #ffffff;
+    color: var(--color-white);
     border-color: var(--accent-color);
 }
 
@@ -190,13 +190,13 @@
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     cursor: pointer;
-    color: #ffffff;
+    color: var(--color-white);
     font-size: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all var(--transition-micro);
-    z-index: 1001;
+    z-index: 10001;
 }
 
 .lightbox-close:hover {
