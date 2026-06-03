@@ -133,7 +133,7 @@ Light-варианты переопределяются в `[data-theme="light"]
 
 | Токен | Значение | Применение |
 |:---|:---|:---|
-| `--hero-overlay` | `linear-gradient(90deg, rgba(0,0,0,0.85)→rgba(0,0,0,0.6)→rgba(0,0,0,0.4)→transparent)` | Оверлей hero-секции |
+| `--hero-overlay` | `linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.80) 20%, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0) 65%)` | Оверлей hero-секции |
 | `--hero-text-color` | `#ffffff` | Цвет заголовка hero |
 | `--hero-text-shadow` | `0 2px 20px rgba(0,0,0,0.5)` | Тень текста hero |
 | `--hero-subtitle-color` | `#ffffff` | Цвет подзаголовка hero |
@@ -192,7 +192,7 @@ Hero-title использует отдельный clamp: `clamp(28px, 4.5vw, 48
 
 | Токен | Значение | Применение |
 |:---|:---|:---|
-| `--hero-overlay` | `linear-gradient(90deg, rgba(30,30,60,0.58)→rgba(30,30,60,0.38)→rgba(30,30,60,0.18)→rgba(30,30,60,0.05)→transparent)` | Индиго-тонированный оверлей |
+| `--hero-overlay` | `linear-gradient(90deg, rgba(30,30,60,0.78) 0%, rgba(30,30,60,0.60) 20%, rgba(30,30,60,0.38) 35%, rgba(30,30,60,0.12) 50%, rgba(30,30,60,0) 65%)` | Индиго-тонированный оверлей |
 | `--hero-text-color` | `#ffffff` | Белый текст на тёмном оверлее |
 | `--hero-text-shadow` | `0 2px 20px rgba(30,30,60,0.5), 0 0 60px rgba(30,30,60,0.25)` | Тень с индиго-оттенком |
 | `--hero-subtitle-color` | `#ffffff` | Подзаголовок — белый |
@@ -224,6 +224,25 @@ Hero-title использует отдельный clamp: `clamp(28px, 4.5vw, 48
 
 ---
 
+### New Tokens (v3.1)
+
+| Токен | Dark (`:root`) | Light (`[data-theme="light"]`) | Применение |
+|:---|:---|:---|:---|
+| `--color-white` | `#ffffff` | `#ffffff` | Белый текст на тёмном фоне (hero, navbar-cta, badges) |
+| `--font-heading` | `'Outfit', sans-serif` | то же | Заголовки, навбар, кнопки, цены |
+| `--font-body` | `'Inter', sans-serif` | то же | Основной текст |
+| `--surface-bg-solid` | `#484A50` | `rgba(255,255,255,0.98)` | Solid-фоллбек для мобильных (backdrop-filter: none) |
+
+### Z-index Scale
+
+| Токен | Значение | Применение |
+|:---|:---|:---|
+| `--z-navbar` | `10000` | Навбар |
+| `--z-lightbox` | `10001` | Лайтбокс (поверх навбара) |
+| `--z-controls` | `10` | Элементы управления внутри секций |
+
+---
+
 ## Скругления
 
 | Токен | Значение | Применение |
@@ -241,19 +260,19 @@ Hero-title использует отдельный clamp: `clamp(28px, 4.5vw, 48
 
 ```css
 :focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--accent-color);
     outline-offset: 2px;
 }
 
 /* Для кнопок — внутри, без смещения */
 .btn:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--accent-color);
     outline-offset: 2px;
 }
 
 /* Для glass-элементов — ring вместо outline */
 .glass-element:focus-visible {
-    box-shadow: 0 0 0 3px rgba(var(--color-primary), 0.3);
+    box-shadow: 0 0 0 3px rgba(var(--accent-color), 0.3);
 }
 ```
 
@@ -294,6 +313,23 @@ Hero-title использует отдельный clamp: `clamp(28px, 4.5vw, 48
 
 ---
 
+## Lightbox
+
+Модальное окно для просмотра изображений портфолио в увеличенном виде.
+
+| Токен/Свойство | Значение | Применение |
+|:---|:---|:---|
+| z-index | `var(--z-lightbox)` = `10001` | Поверх навбара (10000) |
+| background | `rgba(0, 0, 0, 0.85)` + `blur(8px)` | Затемнение фона |
+| close position | fixed, top 20px, right 20px | Кнопка закрытия |
+| image max-height | `90vh` | Ограничение по высоте |
+| image radius | `var(--radius-md)` | Скругление |
+| image shadow | `0 20px 60px rgba(0,0,0,0.5)` | Тень изображения |
+
+**Закрытие:** клик по крестику, клик по overlay (вне изображения), клавиша Escape.
+
+---
+
 ## Кнопки
 
 | Вариант | Стиль | Применение |
@@ -317,10 +353,10 @@ Hero-title использует отдельный clamp: `clamp(28px, 4.5vw, 48
 
 | Breakpoint | Container | Секции | Особенности |
 |:---|:---|:---|:---|
-| `>1024px` | 1200px, pad 20px | 64px top/bottom | 3-колоночные гриды |
-| `<=1024px` | 100% | 64px | 2 колонки для advantages/pricing/trust |
-| `<=900px` | 100%, pad 20px | 48px | Бургер-меню, backdrop-filter off |
-| `<=768px` | 100%, pad 16px | 48px | Мобильный hero, 1 колонка |
+| `>1024px` | 1200px, pad 20px | 24px top / 64px bottom | 3-колоночные гриды |
+| `<=1024px` | 100% | 24px / 64px | 2 колонки для advantages/pricing/trust |
+| `<=900px` | 100%, pad 20px | 24px / 48px | Бургер-меню, backdrop-filter off |
+| `<=768px` | 100%, pad 16px | 24px / 48px | Мобильный hero, 1 колонка |
 
 Навбар: фиксированная высота `72px` (9 * 8px grid).
 

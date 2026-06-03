@@ -10,7 +10,29 @@
 monument-web/
 ├── index.html              # Основная страница (лендинг)
 ├── css/
-│   └── style.css           # Все стили (glassmorphism + темы)
+│   ├── tokens/
+│   │   └── variables.css   # Токены и темы
+│   ├── base/
+│   │   ├── reset.css       # Сброс стилей
+│   │   ├── typography.css  # Типографика
+│   │   └── buttons.css     # Кнопки
+│   ├── layout/
+│   │   ├── navbar.css      # Навбар
+│   │   └── footer.css      # Футер
+│   ├── sections/
+│   │   ├── sections-common.css
+│   │   ├── hero.css
+│   │   ├── advantages.css
+│   │   ├── process.css
+│   │   ├── portfolio.css
+│   │   ├── pricing.css
+│   │   ├── trust.css
+│   │   ├── faq.css
+│   │   └── cta.css
+│   └── system/
+│       ├── utilities.css
+│       ├── a11y.css
+│       └── fallbacks.css
 ├── js/
 │   ├── theme.js            # JavaScript для переключения тем
 │   └── main.js             # Основной JavaScript (слайдер, мобильное меню)
@@ -26,7 +48,7 @@ monument-web/
 ├── .gitignore              # Игнорируемые файлы
 ├── README.md               # Документация проекта
 ├── AGENTS.md               # Это руководство
-└── DESIGN_SYSTEM.md        # Описание дизайн-системы (v2.0)
+└── DESIGN_SYSTEM.md        # Описание дизайн-системы (v3.1)
 ```
 
 Дизайн: **Glassmorphism** (тёмный фон, стеклянные карточки) + **светлая тема**.
@@ -50,7 +72,7 @@ monument-web/
 - Атрибут `lang="ru"` на `<html>`
 - UTF-8 и viewport meta
 - Alt текст для изображений
-- Стили подключаются через `<link rel="stylesheet" href="css/style.css">`
+- Стили подключаются через `<link rel="stylesheet" href="css/style.css">` (сборка через `style.css`)
 - JavaScript подключается через `<script src="js/*.js" defer></script>`
 
 ### CSS - Glassmorphism v2.0 + Дизайн-система
@@ -61,7 +83,7 @@ monument-web/
 - **Тени:** Системные переменные `--shadow-glass` и `--card-shadow`.
 - **Радиусы:** Унифицированные `--radius-sm`, `--radius-md`, `--radius-lg`.
 - **Темы:** Поддержка `:root` (Dark) и `[data-theme="light"]`.
-- Все стили в `css/style.css`, не в `<style>` тегах.
+- Все стили в отдельных CSS-файлах (см. структуру выше), не в `<style>` тегах.
 - **Важно:** Любые новые отступы/размеры должны использовать системные токены.
 
 ### JavaScript
@@ -119,7 +141,7 @@ monument-web/
 2. Минимальные точечные изменения
 3. Проверяйте в браузере
 4. Следуйте glassmorphism стилю (blur, transparency, тёмный фон)
-5. Стили — только в `css/style.css`
+5. Стили — только в `css/`
 6. JavaScript — только в `js/`
 7. При добавлении новых цветов — используйте CSS переменные.
 8. **Обязательно** следуйте токенам из [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md).

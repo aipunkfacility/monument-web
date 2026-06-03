@@ -1,15 +1,5 @@
 /* system/a11y.css — Accessibility */
 
-:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
-}
-
-.btn:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
-}
-
 /* --- Skip Link (Accessibility) --- */
 .skip-link {
     position: absolute;
