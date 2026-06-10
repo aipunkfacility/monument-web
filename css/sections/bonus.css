@@ -1,0 +1,52 @@
+/* sections/bonus.css — Restoration bonus section (banner style) */
+
+.bonus {
+    background: var(--section-bg);
+}
+
+#bonus {
+    padding-top: var(--space-6);
+}
+
+.bonus-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-6);
+    background: var(--cta-bg);
+    border: 1px solid var(--accent-color);
+    border-radius: var(--radius-md);
+    font-size: var(--text-xl);
+    font-weight: 500;
+    color: var(--heading-color);
+}
+
+.bonus-banner i {
+    font-size: 32px;
+    color: var(--accent-color);
+    flex-shrink: 0;
+}
+
+.bonus-banner span {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .bonus-banner {
+        gap: var(--space-3);
+        padding: var(--space-4) var(--space-5);
+        font-size: var(--text-lg);
+    }
+
+    .bonus-banner i {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bonus-banner {
+        padding: var(--space-3) var(--space-4);
+        font-size: var(--text-base);
+    }
+}

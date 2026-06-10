@@ -136,14 +136,14 @@
     background: var(--cta-bg);
     border: 1px solid var(--accent-color);
     border-radius: var(--radius-md);
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
     font-weight: 600;
     color: var(--heading-color);
     margin-top: var(--space-8);
 }
 
 .pricing-banner i {
-    font-size: 24px;
+    font-size: 28px;
     color: var(--accent-color);
 }
 

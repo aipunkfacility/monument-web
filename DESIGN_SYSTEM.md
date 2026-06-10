@@ -330,6 +330,58 @@ Hero-title использует отдельный clamp: `clamp(28px, 4.5vw, 48
 
 ---
 
+## Бонус-плашка (banner)
+
+Повторяет стиль `.pricing-banner` — используется для акцентных сообщений между секциями.
+
+```css
+.bonus-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-6);
+    background: var(--cta-bg);
+    border: 1px solid var(--accent-color);
+    border-radius: var(--radius-md);
+    font-size: var(--text-xl);
+    color: var(--heading-color);
+}
+```
+
+- Иконка: Remix Icon, 32px desktop / 28px mobile, `--accent-color`
+- На мобильных (`<=768px`): текст `--text-lg`, паддинг `--space-4 --space-5`
+- Ссылка в навигации не нужна
+
+---
+
+## Портфолио: до/после (portfolio-pair)
+
+Каждый слайд карусели показывает два изображения рядом — восстановленный оригинал и ретушь.
+
+```css
+.portfolio-pair {
+    display: flex;
+    gap: var(--space-5);
+    width: 100%;
+    align-items: flex-start;
+}
+
+.portfolio-figure {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+```
+
+- `figcaption`: `--text-sm`, `--text-muted`, отступ `--space-3` сверху
+- На мобильных (`<=768px`): `flex-direction: column`, gap `--space-6`
+- Каждая картинка кликабельна — открывается в лайтбоксе
+
+---
+
 ## Кнопки
 
 | Вариант | Стиль | Применение |
@@ -338,7 +390,7 @@ Hero-title использует отдельный clamp: `clamp(28px, 4.5vw, 48
 | Outline | Прозрачный, бордюр `--color-primary` | Вторичный CTA |
 | Telegram | `rgba(0,136,204,0.8)` | Связь через Telegram |
 | WhatsApp | `rgba(37,211,102,0.8)` | Связь через WhatsApp |
-| Email | `rgba(52,152,219,0.8)` | Связь через email |
+| Email | `rgba(245,158,11,0.85)` | Связь через email (янтарный, отличим от Telegram) |
 
 **Размеры:**
 - Default: `padding: 16px 32px`, font-size 16px, border-radius 12px

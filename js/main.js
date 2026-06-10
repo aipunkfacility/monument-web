@@ -246,18 +246,19 @@
         const lightboxClose = document.getElementById('lightboxClose');
 
         if (lightbox && lightboxImage && lightboxClose) {
-            // Open on image click
+            // Open on image click (supports multiple images per slide)
             slides.forEach(function(slide) {
-                var img = slide.querySelector('img');
-                if (img) {
-                    img.style.cursor = 'zoom-in';
-                    img.addEventListener('click', function() {
-                        lightboxImage.src = img.src;
-                        lightboxImage.alt = img.alt;
-                        lightbox.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                    });
-                }
+                var imgs = slide.querySelectorAll('.portfolio-figure img');
+                imgs.forEach(function(img) {
+                    if (img) {
+                        img.addEventListener('click', function() {
+                            lightboxImage.src = img.src;
+                            lightboxImage.alt = img.alt;
+                            lightbox.classList.add('active');
+                            document.body.style.overflow = 'hidden';
+                        });
+                    }
+                });
             });
 
             // Close handlers
